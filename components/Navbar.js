@@ -3,13 +3,18 @@ import Link from 'next/link';
 import DarkModeSwitch from './DarkModeSwitch';
 import { useState } from 'react';
 import { useColorModeValue } from '@chakra-ui/react';
+import styled from '@emotion/styled';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
   const bgColor = useColorModeValue('bgLightOpacity', 'bgDarkOpacity');
+
+  const Nav = styled(Flex)`
+    backdrop-filter: blur(20px);
+  `;
   return (
-    <Flex
+    <Nav
       py={5}
       as='nav'
       bg={bgColor}
@@ -42,7 +47,7 @@ const Navbar = () => {
         </Link>
         <DarkModeSwitch />
       </HStack>
-    </Flex>
+    </Nav>
   );
 };
 
