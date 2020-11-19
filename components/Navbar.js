@@ -1,13 +1,15 @@
-import { Flex, Button, Box, Spacer, HStack } from '@chakra-ui/react';
+import { Flex, Button, Box, Spacer, Stack } from '@chakra-ui/react';
 import Link from 'next/link';
 import DarkModeSwitch from './DarkModeSwitch';
 import { useState } from 'react';
 import { useColorModeValue } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
+
   const bgColor = useColorModeValue('bgLightOpacity', 'bgDarkOpacity');
 
   const Nav = styled(Flex)`
@@ -29,7 +31,16 @@ const Navbar = () => {
         </Button>
       </Link>
       <Spacer />
-      <HStack spacing={[1, 2, 3, 4]}>
+      <Stack
+        display={{ base: show ? 'flex' : 'none', md: 'flex' }}
+        // width={{ base: '100%', md: 'auto' }}
+        width='100%'
+        spacing={[1, 2, 3, 4]}
+        direction={{ base: 'column', md: 'row' }}
+        h={{ base: '100vh', md: 'auto' }}
+        justifyContent='center'
+        alignContent='center'
+      >
         <Link href='/blog/first-post'>
           <Button variant='outline' size='sm' as='a'>
             First post
@@ -46,7 +57,14 @@ const Navbar = () => {
           </Button>
         </Link>
         <DarkModeSwitch />
-      </HStack>
+      </Stack>
+      <Button
+        size='sm'
+        display={{ base: 'flex', md: 'none' }}
+        onClick={handleToggle}
+      >
+        {show ? <ChevronUpIcon /> : <ChevronDownIcon />}
+      </Button>
     </Nav>
   );
 };

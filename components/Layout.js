@@ -16,7 +16,8 @@ const Layout = ({ children }, props) => {
       bg={bgColor[colorMode]}
       color={color[colorMode]}
       {...props}
-      p={5}
+      px={5}
+      py={2}
     >
       <Flex
         direction='column'
@@ -24,7 +25,7 @@ const Layout = ({ children }, props) => {
         minH='100vh'
         alignItems='center'
         maxW={960}
-        py={10}
+        py={[0, 0, 5, 10]}
       >
         <Navbar />
         <Flex

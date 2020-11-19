@@ -19,8 +19,8 @@ const colors = {
   dark: '#151719',
   bgDark: '#151719',
   bgLight: '#F7FAFC',
-  bgDarkOpacity: 'rgba(21, 23, 25, 0.90)',
-  bgLightOpacity: 'rgba(248, 250, 252, 0.90)',
+  bgDarkOpacity: 'rgba(21, 23, 25, 0.85)',
+  bgLightOpacity: 'rgba(248, 250, 252, 0.85)',
 };
 
 const customTheme = extendTheme({ styles, colors, config });
