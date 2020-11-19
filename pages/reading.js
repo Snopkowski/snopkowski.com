@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import { Divider } from '@chakra-ui/react';
 const Reading = () => {
   return (
     <Layout>
@@ -8,6 +9,7 @@ const Reading = () => {
         Architecto laborum, quibusdam debitis, repellendus doloribus voluptatum
         totam iste ullam ipsum laudantium tempore optio odio in id!
       </h1>
+      <Divider />
     </Layout>
   );
 };

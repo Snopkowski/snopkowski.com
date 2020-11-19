@@ -1,23 +1,15 @@
-import { extendTheme, theme } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 import { useColorModeValue } from '@chakra-ui/react';
 
 const config = {
   useSystemColorMode: true,
 };
 
-const global = {
-  styles: {
-    global: {
-      'html, body': {
-        lineHeight: 'tall',
-      },
-    },
-  },
-};
-
 const styles = {
   global: () => ({
-    body: { bg: useColorModeValue('bgLight', 'bgDark') },
+    body: {
+      bg: useColorModeValue('bgLight', 'bgDark'),
+    },
   }),
 };
 
@@ -31,6 +23,6 @@ const colors = {
   bgLightOpacity: 'rgba(248, 250, 252, 0.90)',
 };
 
-const customTheme = extendTheme({ styles, global, colors, config });
+const customTheme = extendTheme({ styles, colors, config });
 
 export default customTheme;
