@@ -20,12 +20,19 @@ const Layout = ({ children }, props) => {
     >
       <Flex
         direction='column'
+        width='100%'
         minH='100vh'
         alignItems='center'
-        maxW={{ base: '90%', md: '80%', lg: '70%', xl: '60%' }}
+        maxW={960}
+        py={10}
       >
         <Navbar />
-        <Flex direction='column' as='main'>
+        <Flex
+          direction='column'
+          width='100%'
+          justifyContent='flex-start'
+          as='main'
+        >
           {children}
         </Flex>
         <Spacer />
