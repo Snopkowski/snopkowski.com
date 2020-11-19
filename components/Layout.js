@@ -1,4 +1,4 @@
-import { Flex, useColorMode, Spacer, Container } from '@chakra-ui/react';
+import { Flex, useColorMode, Spacer, Stack, Container } from '@chakra-ui/react';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -15,16 +15,22 @@ const Layout = ({ children }, props) => {
       justifyContent='flex-start'
       bg={bgColor[colorMode]}
       color={color[colorMode]}
-      minH='100vh'
-      px={10}
       {...props}
+      p={5}
     >
-      <Navbar />
-      <Flex direction='column' as='main'>
-        {children}
+      <Flex
+        direction='column'
+        minH='100vh'
+        alignItems='center'
+        maxW={{ base: '90%', md: '80%', lg: '70%', xl: '60%' }}
+      >
+        <Navbar />
+        <Flex direction='column' as='main'>
+          {children}
+        </Flex>
+        <Spacer />
+        <Footer />
       </Flex>
-      <Spacer />
-      <Footer />
     </Flex>
   );
 };

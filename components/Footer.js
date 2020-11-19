@@ -1,8 +1,8 @@
-import { Flex, Link, Stack, Text } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Container, Flex, Link, Stack, Text } from '@chakra-ui/react';
+
 function Footer() {
   return (
-    <Stack
+    <Flex
       as='footer'
       direction='column'
       align='center'
@@ -11,17 +11,19 @@ function Footer() {
     >
       <Stack direction='row' spacing={5}>
         <Link href='https://twitter.com/' isExternal>
-          Twitter <ExternalLinkIcon />
+          Twitter
         </Link>
         <Link href='https://twitter.com/' isExternal>
-          Twitter <ExternalLinkIcon />
+          Github
         </Link>
         <Link href='https://twitter.com/' isExternal>
-          Twitter <ExternalLinkIcon />
+          Contact
         </Link>
       </Stack>
-      <Text fontSize='sm'>&copy; Wojciech Snopkowski</Text>
-    </Stack>
+      <Text pt={5} alignSelf='flex-start'>
+        &copy; Wojciech Snopkowski | Code is on github....
+      </Text>
+    </Flex>
   );
 }
 

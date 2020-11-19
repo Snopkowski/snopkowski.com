@@ -1,15 +1,18 @@
-import { Flex, Button, Box, Spacer } from '@chakra-ui/react';
+import { Flex, Button, Box, Spacer, HStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import DarkModeSwitch from './DarkModeSwitch';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
+  const handleToggle = () => setShow(!show);
   return (
-    <Flex as='nav' direction='row' w='100%'>
+    <Flex py={5} as='nav' direction='row' w='100%'>
       <Link href='/'>
         <Button as='a'>Home</Button>
       </Link>
       <Spacer />
-      <Box>
+      <HStack spacing={[1, 2, 3, 4]}>
         <Link href='/blog/first-post'>
           <Button as='a'>First post</Button>
         </Link>
@@ -20,7 +23,7 @@ const Navbar = () => {
           <Button as='a'>Home</Button>
         </Link>
         <DarkModeSwitch />
-      </Box>
+      </HStack>
     </Flex>
   );
 };
