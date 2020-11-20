@@ -1,44 +1,33 @@
-import { Flex, useColorMode, Spacer, Stack, Container } from '@chakra-ui/react';
+import { Flex, Spacer, Stack, Container } from '@chakra-ui/react';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
-const Layout = ({ children }, props) => {
-  const { colorMode } = useColorMode();
-
-  const bgColor = { light: 'bgLight', dark: 'bgDark' };
-
-  const color = { light: 'bgDark', dark: 'bgLight' };
+const Layout = ({ children }) => {
   return (
     <Flex
       direction='column'
       alignItems='center'
       justifyContent='flex-start'
-      bg={bgColor[colorMode]}
-      color={color[colorMode]}
-      {...props}
-      px={5}
       py={2}
+      px={5}
+      maxW='2xl'
+      minH='100vh'
+      width='100%'
+      m='0 auto'
     >
-      <Flex
+      <Navbar />
+      <Stack
         direction='column'
         width='100%'
-        minH='100vh'
-        alignItems='center'
-        maxW={960}
-        py={[0, 0, 5, 10]}
+        justifyContent='flex-start'
+        as='main'
+        overflow='hidden'
+        py={10}
       >
-        <Navbar />
-        <Flex
-          direction='column'
-          width='100%'
-          justifyContent='flex-start'
-          as='main'
-        >
-          {children}
-        </Flex>
-        <Spacer />
-        <Footer />
-      </Flex>
+        {children}
+      </Stack>
+      <Spacer />
+      <Footer />
     </Flex>
   );
 };
