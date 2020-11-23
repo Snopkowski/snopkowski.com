@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
       alignItems='center'
       justifyContent='flex-start'
       py={2}
-      px={5}
       maxW='2xl'
       minH='100vh'
       width='100%'
@@ -23,6 +22,7 @@ const Layout = ({ children }) => {
         as='main'
         overflow='hidden'
         py={10}
+        px={5}
       >
         {children}
       </Stack>

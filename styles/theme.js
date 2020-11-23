@@ -38,8 +38,8 @@ const customTheme = {
     dark: '#151719',
     bgDark: '#151719',
     bgLight: '#F7FAFC',
-    bgDarkOpacity: 'rgba(21, 23, 25, 0.95)',
-    bgLightOpacity: 'rgba(248, 250, 252, 0.95)',
+    bgDarkOpacity: 'rgba(21, 23, 25, 0.9)',
+    bgLightOpacity: 'rgba(248, 250, 252, 0.9)',
   },
   config: {
     useSystemColorMode: true,

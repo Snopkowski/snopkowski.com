@@ -1,4 +1,4 @@
-import { Flex, Button, Spacer, Stack, useDisclosure } from '@chakra-ui/react';
+import { Flex, Button, Stack } from '@chakra-ui/react';
 import Link from 'next/link';
 import DarkModeSwitch from './DarkModeSwitch';
 import { useState } from 'react';
@@ -8,10 +8,9 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
-  // const { isOpen, onOpen, onClose } = useDisclosure();
 
   const Nav = styled(Flex)`
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
   `;
   return (
     <Nav
@@ -19,20 +18,18 @@ const Navbar = () => {
       as='nav'
       direction='row'
       w='100%'
-      maxW='2xl'
       pos='sticky'
       top='0'
+      px={5}
+      justifyContent='space-between'
     >
       <Link href='/'>
         <Button variant='outline' size='sm' as='a'>
           HI
         </Button>
       </Link>
-      <Spacer display={{ base: 'none', md: 'block' }} />
       <Stack
         display={{ base: show ? 'flex' : 'none', md: 'flex' }}
-        width={{ base: '100%', md: 'auto' }}
-        grow='1'
         spacing={[1, 2, 3, 4]}
         direction={{ base: 'column', md: 'row' }}
         h={{ base: '100vh', md: 'auto' }}
