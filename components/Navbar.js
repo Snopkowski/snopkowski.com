@@ -1,9 +1,10 @@
-import { Flex, Button, Stack } from '@chakra-ui/react';
+import { Flex, Button, Stack, IconButton } from '@chakra-ui/react';
 import Link from 'next/link';
 import DarkModeSwitch from './DarkModeSwitch';
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
   const Nav = styled(Flex)`
     backdrop-filter: blur(10px);
   `;
+
   return (
     <Nav
       py={5}
@@ -28,6 +30,7 @@ const Navbar = () => {
           HI
         </Button>
       </Link>
+
       <Stack
         display={{ base: show ? 'flex' : 'none', md: 'flex' }}
         spacing={[1, 2, 3, 4]}
@@ -52,14 +55,19 @@ const Navbar = () => {
         </Link>
         <DarkModeSwitch />
       </Stack>
-      <Button
-        size='sm'
+      <IconButton
+        size='md'
         display={{ base: 'flex', md: 'none' }}
         onClick={handleToggle}
         justify='flex-end'
-      >
-        {show ? <ChevronUpIcon /> : <ChevronDownIcon />}
-      </Button>
+        aria-label='Toggle Navigation'
+        onClickCapture={
+          show
+            ? (e) => clearAllBodyScrollLocks(e.currentTarget)
+            : (e) => disableBodyScroll(e.currentTarget)
+        }
+        icon={show ? <ChevronUpIcon /> : <ChevronDownIcon />}
+      />
     </Nav>
   );
 };
