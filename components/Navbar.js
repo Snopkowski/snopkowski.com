@@ -1,4 +1,10 @@
-import { Flex, Button, Stack, IconButton } from '@chakra-ui/react';
+import {
+  Flex,
+  Button,
+  Stack,
+  IconButton,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import Link from 'next/link';
 import DarkModeSwitch from './DarkModeSwitch';
 import { useState } from 'react';
@@ -24,6 +30,7 @@ const Navbar = () => {
       top='0'
       px={5}
       justifyContent='space-between'
+      bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
     >
       <Link href='/'>
         <Button variant='outline' size='sm' as='a'>
