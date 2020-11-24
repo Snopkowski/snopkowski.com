@@ -1,6 +1,6 @@
-import { Flex, Spacer, Stack, Container } from '@chakra-ui/react';
+import { Flex, Spacer, Stack } from '@chakra-ui/react';
 import Footer from './Footer';
-import Navbar from './Navbar';
+import Navigation from './Navigation';
 
 const Layout = ({ children }) => {
   return (
@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
       width='100%'
       m='0 auto'
     >
-      <Navbar />
+      <Navigation />
       <Stack
         direction='column'
         width='100%'
