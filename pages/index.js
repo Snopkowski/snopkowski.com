@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { Heading, Text } from '@chakra-ui/react';
+import { Heading, Text, Link } from '@chakra-ui/react';
 
 const Index = () => (
   <Layout>
@@ -12,6 +12,9 @@ const Index = () => (
       asperiores enim, corporis nam exercitationem!
     </Text>
     <Text fontSize='6xl'>(6xl) In love with React & Next</Text>
+    <Link href='https://google.com'>
+      <a>Google</a>
+    </Link>
   </Layout>
 );
 

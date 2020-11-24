@@ -1,14 +1,22 @@
-import { useDisclosure, Button, Flex } from '@chakra-ui/react';
-import { useRef } from 'react';
+import {
+  useDisclosure,
+  Button,
+  Flex,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import Link from 'next/link';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import NavDrawer from './NavDrawer';
+import styled from '@emotion/styled';
 const Navigation = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef();
+
+  const Nav = styled(Flex)`
+    backdrop-filter: blur(20px);
+  `;
 
   return (
-    <Flex
+    <Nav
       py={5}
       as='nav'
       direction='row'
@@ -17,17 +25,18 @@ const Navigation = () => {
       top='0'
       px={5}
       justifyContent='space-between'
+      bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
     >
       <Link href='/'>
-        <Button variant='outline' size='sm' as='a'>
+        <Button size='sm' as='a'>
           HI
         </Button>
       </Link>
-      <Button ref={btnRef} size='sm' onClick={onOpen}>
+      <Button onClick={onOpen}>
         <ChevronDownIcon />
       </Button>
-      <NavDrawer onClose={onClose} isOpen={isOpen} btnRef={btnRef} />
-    </Flex>
+      <NavDrawer onClose={onClose} isOpen={isOpen} />
+    </Nav>
   );
 };
 

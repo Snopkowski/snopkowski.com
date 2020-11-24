@@ -7,8 +7,12 @@ const customTheme = {
     dark: '#151719',
     bgDark: '#151719',
     bgLight: '#F7FAFC',
-    bgDarkOpacity: 'rgba(21, 23, 25, 0.9)',
+    bgDarkOpacity: 'rgba(21, 23, 25, 0.6)',
     bgLightOpacity: 'rgba(248, 250, 252, 0.9)',
+  },
+  shadows: {
+    ...theme.shadows,
+    outline: '0 0 0 3px aquamarine',
   },
   styles: {
     global: (props) => ({
