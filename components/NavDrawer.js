@@ -21,12 +21,13 @@ const NavDrawer = ({ onClose, isOpen, btnRef }) => {
     >
       <DrawerOverlay bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}>
         <DrawerContent
+          // boxShadow='none'
           w='2xl'
           bg={useColorModeValue('bgLight', 'bgDark')}
           m='0 auto'
           p={5}
         >
-          <Button alignSelf='flex-end' onClick={onClose}>
+          <Button alignSelf='flex-end' size='sm' onClick={onClose}>
             <ChevronUpIcon />
           </Button>
 
@@ -34,7 +35,7 @@ const NavDrawer = ({ onClose, isOpen, btnRef }) => {
 
           <DrawerBody>hello</DrawerBody>
 
-          <DrawerFooter>I'm a footer</DrawerFooter>
+          <DrawerFooter mb='20vh'>I'm a footer</DrawerFooter>
         </DrawerContent>
       </DrawerOverlay>
     </Drawer>

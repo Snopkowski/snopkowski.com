@@ -23,7 +23,7 @@ const Navigation = () => {
           HI
         </Button>
       </Link>
-      <Button ref={btnRef} onClick={onOpen}>
+      <Button ref={btnRef} size='sm' onClick={onOpen}>
         <ChevronDownIcon />
       </Button>
       <NavDrawer onClose={onClose} isOpen={isOpen} btnRef={btnRef} />
