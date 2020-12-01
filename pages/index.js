@@ -1,8 +1,7 @@
-import Layout from '../components/Layout';
 import { Heading, Text, Link } from '@chakra-ui/react';
 
 const Index = () => (
-  <Layout>
+  <>
     <Heading as='h1' size='3xl' fontWeight='300'>
       Hi, I'm Wojciech Snopkowski
     </Heading>
@@ -15,7 +14,7 @@ const Index = () => (
     <Link href='https://google.com'>
       <a>Google</a>
     </Link>
-  </Layout>
+  </>
 );
 
 export default Index;
