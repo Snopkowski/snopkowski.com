@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Button,
   Link as ChakraLink,
+  IconButton,
 } from '@chakra-ui/react';
 import { TriangleUpIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
@@ -23,14 +24,12 @@ const NavDrawer = ({ onClose, isOpen }) => {
           px={5}
           py={7}
         >
-          <Button
+          <IconButton
             alignSelf='flex-end'
             boxShadow='outlineShadow'
             onClick={onClose}
-          >
-            <TriangleUpIcon />
-          </Button>
-
+            icon={<TriangleUpIcon />}
+          />
           <DrawerHeader>hi</DrawerHeader>
 
           <DrawerBody>

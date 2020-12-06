@@ -4,6 +4,7 @@ import {
   Flex,
   Box,
   useColorModeValue,
+  IconButton,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { TriangleDownIcon } from '@chakra-ui/icons';
@@ -37,9 +38,7 @@ const Navigation = () => {
       </Link>
       <Box>
         <DarkModeSwitch />
-        <Button ml={4} onClick={onOpen}>
-          <TriangleDownIcon />
-        </Button>
+        <IconButton ml={4} onClick={onOpen} icon={<TriangleDownIcon />} />
       </Box>
       <NavDrawer onClose={onClose} isOpen={isOpen} />
     </Nav>
