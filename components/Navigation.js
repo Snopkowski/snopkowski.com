@@ -15,6 +15,7 @@ const Navigation = () => {
 
   const Nav = styled(Flex)`
     backdrop-filter: blur(10px);
+    z-index: 10;
   `;
 
   return (

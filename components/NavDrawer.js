@@ -20,7 +20,8 @@ const NavDrawer = ({ onClose, isOpen }) => {
           w='4xl'
           bg={useColorModeValue('bgLight', 'bgDark')}
           m='0 auto'
-          p={5}
+          px={5}
+          py={7}
         >
           <Button
             alignSelf='flex-end'
