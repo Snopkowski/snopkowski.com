@@ -7,15 +7,17 @@ import {
   DrawerContent,
   useColorModeValue,
   Button,
+  Link as ChakraLink,
 } from '@chakra-ui/react';
-import { ChevronUpIcon } from '@chakra-ui/icons';
+import { TriangleUpIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
 
 const NavDrawer = ({ onClose, isOpen }) => {
   return (
     <Drawer isOpen={isOpen} placement='top' onClose={onClose} isFullHeight>
       <DrawerOverlay bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}>
         <DrawerContent
-          w='2xl'
+          w='4xl'
           bg={useColorModeValue('bgLight', 'bgDark')}
           m='0 auto'
           p={5}
@@ -25,12 +27,18 @@ const NavDrawer = ({ onClose, isOpen }) => {
             boxShadow='outlineShadow'
             onClick={onClose}
           >
-            <ChevronUpIcon />
+            <TriangleUpIcon />
           </Button>
 
           <DrawerHeader>hi</DrawerHeader>
 
-          <DrawerBody bg='teal'>hello</DrawerBody>
+          <DrawerBody>
+            <ChakraLink fontSize='2xl'>
+              <Link href='/blog/hello'>
+                <a>Hello Blog</a>
+              </Link>
+            </ChakraLink>
+          </DrawerBody>
 
           <DrawerFooter mb={['20vh', '0']}>I'm a footer</DrawerFooter>
         </DrawerContent>

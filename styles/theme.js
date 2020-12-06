@@ -12,7 +12,7 @@ const customTheme = {
   },
   shadows: {
     ...theme.shadows,
-    outline: '0 0 0 3px aquamarine',
+    outline: '0 0 0 2px salmon',
   },
   styles: {
     global: (props) => ({

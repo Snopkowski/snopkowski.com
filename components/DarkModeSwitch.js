@@ -6,8 +6,6 @@ const DarkModeSwitch = () => {
   return (
     <IconButton
       onClick={toggleColorMode}
-      variant='outline'
-      size='sm'
       icon={colorMode === 'dark' ? <MoonIcon /> : <SunIcon />}
     />
   );

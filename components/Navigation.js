@@ -2,17 +2,19 @@ import {
   useDisclosure,
   Button,
   Flex,
+  Box,
   useColorModeValue,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { TriangleDownIcon } from '@chakra-ui/icons';
 import NavDrawer from './NavDrawer';
 import styled from '@emotion/styled';
+import DarkModeSwitch from './DarkModeSwitch';
 const Navigation = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const Nav = styled(Flex)`
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
   `;
 
   return (
@@ -32,9 +34,12 @@ const Navigation = () => {
           HI
         </Button>
       </Link>
-      <Button onClick={onOpen}>
-        <ChevronDownIcon />
-      </Button>
+      <Box>
+        <DarkModeSwitch />
+        <Button ml={4} onClick={onOpen}>
+          <TriangleDownIcon />
+        </Button>
+      </Box>
       <NavDrawer onClose={onClose} isOpen={isOpen} />
     </Nav>
   );
