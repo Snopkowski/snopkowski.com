@@ -33,9 +33,14 @@ const NavDrawer = ({ onClose, isOpen }) => {
           <DrawerHeader>hi</DrawerHeader>
 
           <DrawerBody>
-            <ChakraLink fontSize='2xl'>
-              <Link href='/blog/hello'>
+            <ChakraLink fontSize='2xl' onClick={onClose}>
+              <Link passHref href='/blog/hello'>
                 <a>Hello Blog</a>
+              </Link>
+            </ChakraLink>
+            <ChakraLink fontSize='2xl' onClick={onClose}>
+              <Link href='/'>
+                <a>Home</a>
               </Link>
             </ChakraLink>
           </DrawerBody>
