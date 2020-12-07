@@ -31,9 +31,9 @@ const Navigation = () => {
       justifyContent='space-between'
       bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
     >
-      <Link href='/'>
-        <Button size='sm' as='a'>
-          HI
+      <Link passHref href='/'>
+        <Button variant='ghost'>
+          <a>Wojciech Snopkowski</a>
         </Button>
       </Link>
       <Box>

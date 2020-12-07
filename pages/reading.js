@@ -1,4 +1,5 @@
 import { Divider } from '@chakra-ui/react';
+import { getAllPostsWithSlug, getPostAndMorePosts } from '../lib/api';
 const Reading = () => {
   return (
     <>
