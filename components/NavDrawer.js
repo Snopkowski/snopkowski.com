@@ -2,17 +2,15 @@ import {
   Drawer,
   DrawerBody,
   DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   useColorModeValue,
-  Button,
-  Link as ChakraLink,
   IconButton,
+  Button,
 } from '@chakra-ui/react';
 import { TriangleUpIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
-
+import { FaHome, FaBook, FaPen, FaEnvelope } from 'react-icons/FA';
 const NavDrawer = ({ onClose, isOpen }) => {
   return (
     <Drawer isOpen={isOpen} placement='top' onClose={onClose} isFullHeight>
@@ -23,6 +21,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
           m='0 auto'
           px={5}
           py={7}
+          shadow='none'
         >
           <IconButton
             alignSelf='flex-end'
@@ -30,22 +29,59 @@ const NavDrawer = ({ onClose, isOpen }) => {
             onClick={onClose}
             icon={<TriangleUpIcon />}
           />
-          <DrawerHeader>hi</DrawerHeader>
 
-          <DrawerBody>
-            <ChakraLink fontSize='2xl' onClick={onClose}>
-              <Link passHref href='/blog/hello'>
-                <a>Hello Blog</a>
-              </Link>
-            </ChakraLink>
-            <ChakraLink fontSize='2xl' onClick={onClose}>
-              <Link href='/'>
+          <DrawerBody
+            display='flex'
+            justifyContent='center'
+            flexDirection='column'
+          >
+            <Link href='/'>
+              <Button
+                leftIcon={<FaHome />}
+                fontSize='4xl'
+                p={8}
+                my={4}
+                onClick={onClose}
+              >
                 <a>Home</a>
-              </Link>
-            </ChakraLink>
+              </Button>
+            </Link>
+            <Link href='/reading'>
+              <Button
+                leftIcon={<FaBook />}
+                fontSize='4xl'
+                p={8}
+                my={4}
+                onClick={onClose}
+              >
+                <a>Reading List</a>
+              </Button>
+            </Link>
+            <Link passHref href='/blog/hello'>
+              <Button
+                leftIcon={<FaPen />}
+                fontSize='4xl'
+                p={8}
+                my={4}
+                onClick={onClose}
+              >
+                <a>Blog</a>
+              </Button>
+            </Link>
+            <Link href='/reading'>
+              <Button
+                leftIcon={<FaEnvelope />}
+                fontSize='4xl'
+                p={8}
+                my={4}
+                onClick={onClose}
+              >
+                <a>Contact</a>
+              </Button>
+            </Link>
           </DrawerBody>
 
-          <DrawerFooter mb={['20vh', '0']}>I'm a footer</DrawerFooter>
+          <DrawerFooter mb={['10vh', '0']}>I'm a footer</DrawerFooter>
         </DrawerContent>
       </DrawerOverlay>
     </Drawer>
