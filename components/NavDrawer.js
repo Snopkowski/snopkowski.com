@@ -33,12 +33,13 @@ const NavDrawer = ({ onClose, isOpen }) => {
           <DrawerBody
             display='flex'
             justifyContent='center'
+            alignItems='flex-start'
             flexDirection='column'
           >
             <Link href='/'>
               <Button
                 leftIcon={<FaHome />}
-                fontSize='4xl'
+                fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
@@ -49,7 +50,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
             <Link href='/reading'>
               <Button
                 leftIcon={<FaBook />}
-                fontSize='4xl'
+                fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
@@ -60,7 +61,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
             <Link passHref href='/blog/hello'>
               <Button
                 leftIcon={<FaPen />}
-                fontSize='4xl'
+                fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
@@ -71,7 +72,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
             <Link href='/reading'>
               <Button
                 leftIcon={<FaEnvelope />}
-                fontSize='4xl'
+                fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
