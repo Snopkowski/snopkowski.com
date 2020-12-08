@@ -1,10 +1,19 @@
-import { FaEnvelope, FaGithub, FaDev, FaLinkedin } from 'react-icons/fa';
-import { IconButton, Flex, Link, HStack } from '@chakra-ui/react';
+import {
+  FaEnvelope,
+  FaGithub,
+  FaDev,
+  FaLinkedin,
+  FaTwitter,
+} from 'react-icons/fa';
+import { IconButton, Link, HStack } from '@chakra-ui/react';
 export default function Social() {
   return (
     <HStack spacing={4}>
       <Link rounded='md' isExternal href='https://github.com/Snopkowski'>
         <IconButton as='a' icon={<FaGithub />} />
+      </Link>
+      <Link rounded='md' isExternal href='https://twitter.com/w_snopkowski'>
+        <IconButton as='a' icon={<FaTwitter />} />
       </Link>
       <Link
         rounded='md'
