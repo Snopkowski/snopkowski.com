@@ -7,8 +7,9 @@ const customTheme = {
     dark: '#151719',
     bgDark: '#151719',
     bgLight: '#F7FAFC',
-    bgDarkOpacity: 'rgba(21, 23, 25, 0.6)',
-    bgLightOpacity: 'rgba(248, 250, 252, 0.9)',
+    // bgLight: '#ccc',
+    bgDarkOpacity: 'rgba(21, 23, 25, 0.8)',
+    bgLightOpacity: 'rgba(248, 250, 252, 0.8)',
   },
   shadows: {
     ...theme.shadows,

@@ -1,28 +1,18 @@
 import { Flex, Link, Stack, Text } from '@chakra-ui/react';
+import Social from './Social';
 
 function Footer() {
   return (
     <Flex
       as='footer'
-      direction='column'
+      // direction='column'
       align='center'
-      justifySelf='flex-end'
+      justifyContent='space-between'
       py={5}
+      w='100%'
     >
-      <Stack direction='row' spacing={5}>
-        <Link href='https://twitter.com/' isExternal>
-          Twitter
-        </Link>
-        <Link href='https://twitter.com/' isExternal>
-          Github
-        </Link>
-        <Link href='https://twitter.com/' isExternal>
-          Contact
-        </Link>
-      </Stack>
-      <Text pt={5} alignSelf='flex-start'>
-        &copy; Wojciech Snopkowski | Code is on github....
-      </Text>
+      <Text fontSize='sm'>&copy; Wojciech Snopkowski</Text>
+      <Social />
     </Flex>
   );
 }

@@ -10,14 +10,21 @@ import {
 } from '@chakra-ui/react';
 import { TriangleUpIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
-import { FaHome, FaBook, FaPen, FaEnvelope } from 'react-icons/FA';
+import Social from './Social';
+
+import styled from '@emotion/styled';
+import { FaHome, FaBook, FaPen, FaEnvelope } from 'react-icons/fa';
 const NavDrawer = ({ onClose, isOpen }) => {
+  const BlurredDrawer = styled(DrawerContent)`
+    backdrop-filter: blur(10px);
+  `;
+
   return (
     <Drawer isOpen={isOpen} placement='top' onClose={onClose} isFullHeight>
       <DrawerOverlay bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}>
-        <DrawerContent
+        <BlurredDrawer
           w='4xl'
-          bg={useColorModeValue('bgLight', 'bgDark')}
+          bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
           m='0 auto'
           px={5}
           py={7}
@@ -82,8 +89,10 @@ const NavDrawer = ({ onClose, isOpen }) => {
             </Link>
           </DrawerBody>
 
-          <DrawerFooter mb={['10vh', '0']}>I'm a footer</DrawerFooter>
-        </DrawerContent>
+          <DrawerFooter mb={['10vh', '0']}>
+            <Social />
+          </DrawerFooter>
+        </BlurredDrawer>
       </DrawerOverlay>
     </Drawer>
   );
