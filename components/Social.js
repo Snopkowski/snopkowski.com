@@ -9,25 +9,44 @@ import { IconButton, Link, HStack } from '@chakra-ui/react';
 export default function Social() {
   return (
     <HStack spacing={4}>
-      <Link rounded='md' isExternal href='https://github.com/Snopkowski'>
-        <IconButton as='a' icon={<FaGithub />} />
-      </Link>
-      <Link rounded='md' isExternal href='https://twitter.com/w_snopkowski'>
-        <IconButton as='a' icon={<FaTwitter />} />
-      </Link>
-      <Link
+      <IconButton
+        as={Link}
+        rounded='md'
+        isExternal
+        href='https://github.com/Snopkowski'
+        icon={<FaGithub />}
+      />
+
+      <IconButton
+        as={Link}
+        rounded='md'
+        isExternal
+        href='https://twitter.com/w_snopkowski'
+        icon={<FaTwitter />}
+      />
+
+      <IconButton
+        as={Link}
         rounded='md'
         isExternal
         href='https://www.linkedin.com/in/wojciechsnopkowski'
-      >
-        <IconButton as='a' icon={<FaLinkedin />} />
-      </Link>
-      <Link rounded='md' isExternal href='https://dev.to/snopkowski'>
-        <IconButton as='a' icon={<FaDev />} />
-      </Link>
-      <Link rounded='md' href='mailto:hello@snopkowski.com'>
-        <IconButton as='a' icon={<FaEnvelope />} />
-      </Link>
+        icon={<FaLinkedin />}
+      />
+
+      <IconButton
+        rounded='md'
+        isExternal
+        href='https://dev.to/snopkowski'
+        as={Link}
+        icon={<FaDev />}
+      />
+
+      <IconButton
+        rounded='md'
+        href='mailto:hello@snopkowski.com'
+        as={Link}
+        icon={<FaEnvelope />}
+      />
     </HStack>
   );
 }

@@ -46,50 +46,57 @@ const NavDrawer = ({ onClose, isOpen }) => {
             <Link href='/'>
               <Button
                 leftIcon={<FaHome />}
+                iconSpacing={2}
                 fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
               >
-                <a>Home</a>
+                Home
               </Button>
             </Link>
             <Link href='/reading'>
               <Button
                 leftIcon={<FaBook />}
+                iconSpacing={2}
                 fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
               >
-                <a>Reading List</a>
+                Reading List
               </Button>
             </Link>
-            <Link passHref href='/blog/hello'>
+            <Link passHref href='/blog'>
               <Button
                 leftIcon={<FaPen />}
+                iconSpacing={2}
                 fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
               >
-                <a>Blog</a>
+                Blog
               </Button>
             </Link>
-            <Link href='/reading'>
+            <Link href='/contact'>
               <Button
                 leftIcon={<FaEnvelope />}
+                iconSpacing={2}
                 fontSize='3xl'
                 p={8}
                 my={4}
                 onClick={onClose}
               >
-                <a>Contact</a>
+                Contact
               </Button>
             </Link>
           </DrawerBody>
 
-          <DrawerFooter mb={['10vh', '0']}>
+          <DrawerFooter
+            alignSelf={{ base: 'center', md: 'end' }}
+            mb={['10vh', '0']}
+          >
             <Social />
           </DrawerFooter>
         </BlurredDrawer>

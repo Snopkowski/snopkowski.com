@@ -1,20 +1,19 @@
-import { Heading, Text, Link } from '@chakra-ui/react';
+import { Heading, Text, Link, Stack } from '@chakra-ui/react';
+import { getAllPostsForHome } from '@/lib/api';
 
-const Index = () => (
-  <>
-    <Heading as='h1' size='3xl' fontWeight='300'>
-      Hi, I'm Wojciech Snopkowski
-    </Heading>
-    <Text>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, optio.
-      Nihil labore dicta officiis possimus nostrum nemo quasi eaque ullam
-      asperiores enim, corporis nam exercitationem!
-    </Text>
-    <Text fontSize='6xl'>(6xl) In love with React & Next</Text>
-    <Link href='https://google.com'>
-      <a>Google</a>
-    </Link>
-  </>
-);
-
-export default Index;
+export default function Index({ allPosts }) {
+  return (
+    <Stack spacing={5}>
+      <Heading as='h1' size='3xl' fontWeight='300'>
+        Hi, I'm Wojciech Snopkowski
+      </Heading>
+      <Text>To be populated on friday</Text>
+    </Stack>
+  );
+}
+export async function getStaticProps({ preview = false }) {
+  const allPosts = await getAllPostsForHome(preview);
+  return {
+    props: { allPosts, preview },
+  };
+}

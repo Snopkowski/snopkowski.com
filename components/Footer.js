@@ -1,19 +1,22 @@
-import { Flex, Link, Stack, Text } from '@chakra-ui/react';
+import { Stack, Text } from '@chakra-ui/react';
 import Social from './Social';
 
 function Footer() {
   return (
-    <Flex
+    <Stack
       as='footer'
-      // direction='column'
-      align='center'
       justifyContent='space-between'
-      py={5}
+      spacing={8}
       w='100%'
+      py={8}
+      px={{ base: '4', md: '8' }}
+      direction={{ base: 'column', md: 'row' }}
     >
-      <Text fontSize='sm'>&copy; Wojciech Snopkowski</Text>
       <Social />
-    </Flex>
+      <Text textAlign='start' fontSize='sm'>
+        &copy; Wojciech Snopkowski
+      </Text>
+    </Stack>
   );
 }
 

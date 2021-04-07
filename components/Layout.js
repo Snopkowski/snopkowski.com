@@ -1,4 +1,4 @@
-import { Flex, Spacer, Stack } from '@chakra-ui/react';
+import { Flex, Spacer, Stack, Divider } from '@chakra-ui/react';
 import Footer from './Footer';
 import Navigation from './Navigation';
 const Layout = ({ children }) => {
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
         as='main'
         overflow='hidden'
         py={10}
-        px={5}
+        px={{ base: '4', md: '16' }}
       >
         {children}
       </Stack>
