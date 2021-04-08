@@ -1,7 +1,18 @@
 // import markdownStyles from './markdown-styles.module.css';
 import BlockContent from '@sanity/block-content-to-react';
-import { urlFor, imageBuilder } from '../lib/sanity';
-import { Stack, Text, Box, Link, chakra, Heading } from '@chakra-ui/react';
+import { urlFor } from '../lib/sanity';
+import {
+  Stack,
+  Text,
+  Box,
+  Link,
+  chakra,
+  Heading,
+  useColorModeValue,
+  Skeleton,
+  Spinner,
+} from '@chakra-ui/react';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 import Image from 'next/image';
 import NextLink from 'next/link';
@@ -37,6 +48,18 @@ export default function PostBody({ content }) {
             </pre>
           )}
         </Highlight>
+      ),
+      twitter: (props) => (
+        <TwitterTweetEmbed
+          options={{
+            theme: useColorModeValue('light', 'dark'),
+            cards: 'hidden',
+            align: 'center',
+          }}
+          placeholder={<Spinner alignSelf='center' size='lg' />}
+          key={props.node.id}
+          tweetId={props.node.id}
+        />
       ),
       sanityImage: (props) => (
         <Box py={2}>
