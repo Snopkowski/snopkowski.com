@@ -3,7 +3,7 @@ import { getAllPostsForHome } from '@/lib/api';
 
 export default function Index({ allPosts }) {
   return (
-    <Stack spacing={5}>
+    <Stack spacing={4}>
       <Heading as='h1' size='3xl' fontWeight='300'>
         Hi, I'm Wojciech Snopkowski
       </Heading>

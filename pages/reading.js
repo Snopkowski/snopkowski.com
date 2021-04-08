@@ -22,7 +22,7 @@ export default function Reading(props) {
     <Stack spacing={4}>
       <Heading as='h1'>Reading list</Heading>
       <Text opacity='50%'>Not limited to programming</Text>
-      <List py={8} spacing={8}>
+      <List py={8} spacing={6}>
         {list.map((item) => {
           return (
             <NextLink

@@ -12,11 +12,13 @@ export default function BlogPage(props) {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ipsam
         mollitia doloremque.
       </Text>
-      <Stack p={8} spacing={8}>
+      <Stack py={8} spacing={6}>
         {posts.map((post) => (
           <NextLink key={post.slug} passHref href={`blog/${post.slug}`}>
-            <Box cursor='pointer'>
-              <Heading key={post.title}>{post.title}</Heading>
+            <Box px={{ base: '2', md: '8' }} cursor='pointer'>
+              <Heading fontSize={{ base: 'lg', md: '4xl' }} key={post.title}>
+                {post.title}
+              </Heading>
               <Text opacity='50%'>{post.excerpt}</Text>
             </Box>
           </NextLink>

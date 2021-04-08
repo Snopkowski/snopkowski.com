@@ -11,6 +11,7 @@ function Footer() {
       py={8}
       px={{ base: '4', md: '8' }}
       direction={{ base: 'column', md: 'row' }}
+      alignItems='center'
     >
       <Social />
       <Text textAlign='start' fontSize='sm'>

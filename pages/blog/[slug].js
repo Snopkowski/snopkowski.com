@@ -1,8 +1,9 @@
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import NextLink from 'next/link';
 import PostBody from '../../components/PostBody';
-import { Heading, Stack } from '@chakra-ui/react';
+import { Heading, Box, Stack } from '@chakra-ui/react';
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -14,20 +15,24 @@ export default function Post({ post, morePosts, preview }) {
         <h1>Loading…</h1>
       ) : (
         <>
-          <Stack as='article' spacing={20}>
-            <Head>
-              <title>{post.title} | Snopkowski.com</title>
-            </Head>
-            <main>
-              <Heading as='h1'>{post.title}</Heading>
-              <PostBody content={post.content} />
-            </main>
-            <aside>
-              {morePosts.map((morePost) => (
-                <div>{morePost.title}</div>
-              ))}
-            </aside>
+          <Head>
+            <title>{post.title} | Snopkowski.com</title>
+          </Head>
+          <Stack spacing={4} shouldWrapChildren>
+            <Heading as='h1' fontSize='5xl'>
+              {post.title}
+            </Heading>
+            <PostBody content={post.content} />
           </Stack>
+          <Stack as='aside'>
+            <Heading>More posts</Heading>
+            {morePosts.map((morePost) => (
+              <NextLink passHref href={`/blog/${morePost.slug}`}>
+                {morePost.title}
+              </NextLink>
+            ))}
+          </Stack>
+
           {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
         </>
       )}
