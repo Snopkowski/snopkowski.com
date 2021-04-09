@@ -13,7 +13,12 @@ import Link from 'next/link';
 import Social from './Social';
 
 import styled from '@emotion/styled';
-import { FaHome, FaBook, FaPen, FaEnvelope } from 'react-icons/fa';
+import {
+  AiOutlineHome,
+  AiOutlineBook,
+  AiOutlineFontSize,
+  AiOutlineForm,
+} from 'react-icons/ai';
 const NavDrawer = ({ onClose, isOpen }) => {
   const BlurredDrawer = styled(DrawerContent)`
     backdrop-filter: blur(10px);
@@ -26,7 +31,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
           w='3xl'
           bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
           m='0 auto'
-          px={8}
+          px={{ base: '4', md: '12' }}
           py={7}
           shadow='none'
         >
@@ -45,9 +50,9 @@ const NavDrawer = ({ onClose, isOpen }) => {
           >
             <Link href='/'>
               <Button
-                // leftIcon={<FaHome />}
-                iconSpacing={2}
-                fontSize='3xl'
+                leftIcon={<AiOutlineHome />}
+                iconSpacing={4}
+                fontSize='2xl'
                 p={8}
                 my={4}
                 onClick={onClose}
@@ -57,9 +62,9 @@ const NavDrawer = ({ onClose, isOpen }) => {
             </Link>
             <Link href='/reading'>
               <Button
-                // leftIcon={<FaBook />}
-                iconSpacing={2}
-                fontSize='3xl'
+                leftIcon={<AiOutlineBook />}
+                iconSpacing={4}
+                fontSize='2xl'
                 p={8}
                 my={4}
                 onClick={onClose}
@@ -69,9 +74,9 @@ const NavDrawer = ({ onClose, isOpen }) => {
             </Link>
             <Link passHref href='/blog'>
               <Button
-                // leftIcon={<FaPen />}
-                iconSpacing={2}
-                fontSize='3xl'
+                leftIcon={<AiOutlineFontSize />}
+                iconSpacing={4}
+                fontSize='2xl'
                 p={8}
                 my={4}
                 onClick={onClose}
@@ -81,9 +86,9 @@ const NavDrawer = ({ onClose, isOpen }) => {
             </Link>
             <Link href='/contact'>
               <Button
-                // leftIcon={<FaEnvelope />}
-                iconSpacing={2}
-                fontSize='3xl'
+                leftIcon={<AiOutlineForm />}
+                iconSpacing={4}
+                fontSize='2xl'
                 p={8}
                 my={4}
                 onClick={onClose}

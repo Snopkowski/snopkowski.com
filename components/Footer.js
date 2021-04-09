@@ -9,7 +9,7 @@ function Footer() {
       spacing={8}
       w='100%'
       py={8}
-      px={{ base: '4', md: '8' }}
+      px={{ base: '4', md: '12' }}
       direction={{ base: 'column', md: 'row' }}
       alignItems='center'
     >

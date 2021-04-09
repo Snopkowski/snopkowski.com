@@ -27,7 +27,7 @@ const Navigation = () => {
       w='100%'
       pos='sticky'
       top='0'
-      px={8}
+      px={{ base: '4', md: '12' }}
       justifyContent='space-between'
       bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
     >

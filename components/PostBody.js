@@ -19,7 +19,6 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
 export default function PostBody({ content }) {
   const Wrapper = chakra(BlockContent);
-  console.log(content);
 
   const serializers = {
     types: {
@@ -113,7 +112,7 @@ export default function PostBody({ content }) {
         const { blank, href, own } = mark;
         if (blank) {
           return (
-            <Link color='colors.accent' href={href} isExternal>
+            <Link color='red.300' href={href} isExternal>
               {children} <ExternalLinkIcon />
             </Link>
           );

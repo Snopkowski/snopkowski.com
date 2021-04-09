@@ -5,6 +5,8 @@ const colors = {
   bgLight: '#F7FAFC',
   bgDarkOpacity: 'rgba(11, 12, 13, 0.8)',
   bgLightOpacity: 'rgba(248, 250, 252, 0.8)',
+  textDarkBg: '#acafb0',
+  textLightBg: '#545455',
 };
 const config = {
   initialColorMode: 'light',
@@ -20,6 +22,16 @@ const styles = {
     'html, body': {
       color: props.colorMode === 'dark' ? 'bgLight' : 'bgDark',
       bg: props.colorMode === 'dark' ? 'bgDark' : 'bgLight',
+    },
+    'p, li': {
+      color: props.colorMode === 'dark' ? 'textDarkBg' : 'textLightBg',
+    },
+    'h1,h2,h3,h4,h5,h6': {
+      color: props.colorMode === 'dark' ? 'bgLight' : 'bgDark',
+    },
+    a: {
+      textDecoration: 'none',
+      color: '#FC8181',
     },
   }),
 };

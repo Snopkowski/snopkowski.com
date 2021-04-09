@@ -1,10 +1,9 @@
 import {
-  FaEnvelope,
-  FaGithub,
-  FaDev,
-  FaLinkedin,
-  FaTwitter,
-} from 'react-icons/fa';
+  AiOutlineForm,
+  AiOutlineLinkedin,
+  AiOutlineTwitter,
+  AiOutlineGithub,
+} from 'react-icons/ai';
 import { IconButton, Link, HStack } from '@chakra-ui/react';
 export default function Social() {
   return (
@@ -14,7 +13,7 @@ export default function Social() {
         rounded='md'
         isExternal
         href='https://github.com/Snopkowski'
-        icon={<FaGithub />}
+        icon={<AiOutlineGithub />}
       />
 
       <IconButton
@@ -22,7 +21,7 @@ export default function Social() {
         rounded='md'
         isExternal
         href='https://twitter.com/w_snopkowski'
-        icon={<FaTwitter />}
+        icon={<AiOutlineTwitter />}
       />
 
       <IconButton
@@ -30,22 +29,14 @@ export default function Social() {
         rounded='md'
         isExternal
         href='https://www.linkedin.com/in/wojciechsnopkowski'
-        icon={<FaLinkedin />}
-      />
-
-      <IconButton
-        rounded='md'
-        isExternal
-        href='https://dev.to/snopkowski'
-        as={Link}
-        icon={<FaDev />}
+        icon={<AiOutlineLinkedin />}
       />
 
       <IconButton
         rounded='md'
         href='mailto:hello@snopkowski.com'
         as={Link}
-        icon={<FaEnvelope />}
+        icon={<AiOutlineForm />}
       />
     </HStack>
   );
