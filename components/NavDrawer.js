@@ -23,10 +23,10 @@ const NavDrawer = ({ onClose, isOpen }) => {
     <Drawer isOpen={isOpen} placement='top' onClose={onClose} isFullHeight>
       <DrawerOverlay bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}>
         <BlurredDrawer
-          w='4xl'
+          w='3xl'
           bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
           m='0 auto'
-          px={5}
+          px={8}
           py={7}
           shadow='none'
         >
@@ -45,7 +45,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
           >
             <Link href='/'>
               <Button
-                leftIcon={<FaHome />}
+                // leftIcon={<FaHome />}
                 iconSpacing={2}
                 fontSize='3xl'
                 p={8}
@@ -57,7 +57,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
             </Link>
             <Link href='/reading'>
               <Button
-                leftIcon={<FaBook />}
+                // leftIcon={<FaBook />}
                 iconSpacing={2}
                 fontSize='3xl'
                 p={8}
@@ -69,7 +69,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
             </Link>
             <Link passHref href='/blog'>
               <Button
-                leftIcon={<FaPen />}
+                // leftIcon={<FaPen />}
                 iconSpacing={2}
                 fontSize='3xl'
                 p={8}
@@ -81,7 +81,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
             </Link>
             <Link href='/contact'>
               <Button
-                leftIcon={<FaEnvelope />}
+                // leftIcon={<FaEnvelope />}
                 iconSpacing={2}
                 fontSize='3xl'
                 p={8}

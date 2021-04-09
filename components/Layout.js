@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       alignItems='center'
       justifyContent='flex-start'
       py={2}
-      maxW='4xl'
+      maxW='3xl'
       minH='100vh'
       width='100%'
       m='0 auto'

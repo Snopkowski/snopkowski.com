@@ -1,6 +1,7 @@
 // import markdownStyles from './markdown-styles.module.css';
 import BlockContent from '@sanity/block-content-to-react';
 import { urlFor } from '../lib/sanity';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Stack,
   Text,
@@ -111,33 +112,26 @@ export default function PostBody({ content }) {
       link: ({ mark, children }) => {
         const { blank, href, own } = mark;
         if (blank) {
-          return blank ? (
-            <a
-              style={{ color: 'salmon' }}
-              href={href}
-              target='_blank'
-              rel='noopener'
-            >
-              {children}
-            </a>
-          ) : (
-            <a style={{ color: 'salmon' }} href={href}>
-              {children}
-            </a>
+          return (
+            <Link color='colors.accent' href={href} isExternal>
+              {children} <ExternalLinkIcon />
+            </Link>
           );
         }
         if (own) {
           return (
             <NextLink href={href} passHref>
-              <a style={{ color: 'salmon' }}>{children}</a>
+              <Link as='a' style={{ color: 'salmon' }}>
+                {children}
+              </Link>
             </NextLink>
           );
         }
         if (!own || !blank)
           return (
-            <a href={href} style={{ color: 'salmon' }}>
+            <Link as='a' href={href} style={{ color: 'salmon' }}>
               {children}
-            </a>
+            </Link>
           );
       },
     },

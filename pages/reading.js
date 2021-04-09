@@ -12,9 +12,11 @@ import {
   Center,
   Spacer,
   Divider,
+  Link,
   Flex,
   SimpleGrid,
 } from '@chakra-ui/layout';
+import { outline } from '@chakra-ui/styled-system';
 import NextLink from 'next/link';
 export default function Reading(props) {
   const list = props.readingList;
@@ -31,7 +33,12 @@ export default function Reading(props) {
               display='flex'
               key={item.title}
             >
-              <Flex px={{ base: '2', md: '8' }} direction='column' as='a'>
+              <Flex
+                px={{ base: '2', md: '8' }}
+                direction='column'
+                outlineColor='red.300'
+                as='a'
+              >
                 <Flex py={4}>
                   <Heading fontSize={{ base: 'lg', md: '4xl' }}>
                     {item.title}
