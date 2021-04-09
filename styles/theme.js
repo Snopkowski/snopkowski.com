@@ -4,10 +4,8 @@ const customTheme = {
   colors: {
     primary: 'yellow',
     secondary: 'blue',
-    dark: '#151719',
     bgDark: '#151719',
     bgLight: '#F7FAFC',
-    // bgLight: '#ccc',
     bgDarkOpacity: 'rgba(21, 23, 25, 0.8)',
     bgLightOpacity: 'rgba(248, 250, 252, 0.8)',
   },

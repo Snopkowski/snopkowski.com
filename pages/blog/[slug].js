@@ -18,7 +18,7 @@ export default function Post({ post, morePosts, preview }) {
           <Head>
             <title>{post.title} | Snopkowski.com</title>
           </Head>
-          <Stack spacing={4} shouldWrapChildren>
+          <Stack spacing={4}>
             <Heading as='h1' fontSize='5xl'>
               {post.title}
             </Heading>

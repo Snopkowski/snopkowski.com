@@ -9,17 +9,16 @@ import {
   chakra,
   Heading,
   useColorModeValue,
-  Skeleton,
   Spinner,
 } from '@chakra-ui/react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 
-import Image from 'next/image';
 import NextLink from 'next/link';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
 export default function PostBody({ content }) {
   const Wrapper = chakra(BlockContent);
+  console.log(content);
 
   const serializers = {
     types: {
@@ -109,13 +108,37 @@ export default function PostBody({ content }) {
     },
 
     marks: {
-      sanityLink: ({ mark, children }) => {
-        const { href } = mark;
-        return (
-          <NextLink passHref href={href} target='_blank' rel='noopener'>
-            <Link>{children}</Link>
-          </NextLink>
-        );
+      link: ({ mark, children }) => {
+        const { blank, href, own } = mark;
+        if (blank) {
+          return blank ? (
+            <a
+              style={{ color: 'salmon' }}
+              href={href}
+              target='_blank'
+              rel='noopener'
+            >
+              {children}
+            </a>
+          ) : (
+            <a style={{ color: 'salmon' }} href={href}>
+              {children}
+            </a>
+          );
+        }
+        if (own) {
+          return (
+            <NextLink href={href} passHref>
+              <a style={{ color: 'salmon' }}>{children}</a>
+            </NextLink>
+          );
+        }
+        if (!own || !blank)
+          return (
+            <a href={href} style={{ color: 'salmon' }}>
+              {children}
+            </a>
+          );
       },
     },
   };
