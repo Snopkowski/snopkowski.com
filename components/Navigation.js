@@ -32,11 +32,18 @@ const Navigation = () => {
       bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
     >
       <Link passHref href='/'>
-        <Button variant='solid'>WS</Button>
+        <Button aria-label='Homepage' variant='solid'>
+          WS
+        </Button>
       </Link>
       <Box>
         <DarkModeSwitch />
-        <IconButton ml={4} onClick={onOpen} icon={<TriangleDownIcon />} />
+        <IconButton
+          aria-label='Open Navigation'
+          ml={4}
+          onClick={onOpen}
+          icon={<TriangleDownIcon />}
+        />
       </Box>
       <NavDrawer onClose={onClose} isOpen={isOpen} />
     </Nav>

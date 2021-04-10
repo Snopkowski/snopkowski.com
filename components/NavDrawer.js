@@ -40,6 +40,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
             boxShadow='outlineShadow'
             onClick={onClose}
             icon={<TriangleUpIcon />}
+            aria-label='Close Navigation'
           />
 
           <DrawerBody
