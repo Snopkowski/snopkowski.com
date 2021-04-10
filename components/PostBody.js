@@ -8,12 +8,13 @@ import {
   Box,
   Link,
   chakra,
+  Icon,
   Heading,
   useColorModeValue,
   Spinner,
 } from '@chakra-ui/react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-
+import { AiOutlineLink } from 'react-icons/ai';
 import NextLink from 'next/link';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
@@ -113,7 +114,8 @@ export default function PostBody({ content }) {
         if (blank) {
           return (
             <Link color='red.300' href={href} isExternal>
-              {children} <ExternalLinkIcon />
+              {children}&nbsp;
+              <ExternalLinkIcon />
             </Link>
           );
         }

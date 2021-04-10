@@ -15,7 +15,7 @@ export default function BlogPage(props) {
         {posts.map((post) => (
           <NextLink key={post.slug} passHref href={`blog/${post.slug}`}>
             <Box as='a' px={{ base: '2', md: '4' }} cursor='pointer'>
-              <Heading fontSize={{ base: 'lg', md: '4xl' }} key={post.title}>
+              <Heading fontSize={{ base: 'lg', md: '3xl' }} key={post.title}>
                 {post.title}
               </Heading>
               <Text>{post.excerpt}</Text>

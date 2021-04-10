@@ -29,10 +29,10 @@ const styles = {
     'h1,h2,h3,h4,h5,h6': {
       color: props.colorMode === 'dark' ? 'bgLight' : 'bgDark',
     },
-    a: {
-      textDecoration: 'none',
-      color: '#FC8181',
-    },
+    // a: {
+    //   textDecoration: 'none',
+    //   color: '#FC8181',
+    // },
   }),
 };
 

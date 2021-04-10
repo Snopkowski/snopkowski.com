@@ -32,7 +32,7 @@ export default function Reading(props) {
                 isExternal
               >
                 <Flex py={2}>
-                  <Heading fontSize={{ base: 'lg', md: '4xl' }}>
+                  <Heading fontSize={{ base: 'lg', md: '3xl' }}>
                     {item.title}
                   </Heading>
                   <Spacer />
