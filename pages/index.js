@@ -1,6 +1,5 @@
 import { Heading, Text, Box, Link, Stack } from '@chakra-ui/react';
 import { getAllPostsForHome } from '@/lib/api';
-import Image from 'next/image';
 
 export default function Index({ allPosts }) {
   return (
@@ -13,7 +12,6 @@ export default function Index({ allPosts }) {
         eum atque porro distinctio animi totam doloremque nulla pariatur
         perspiciatis!
       </Text>
-      <Image src='/IndexIMG.jpg' width={6000} height={4000} />
       <Stack px={{ base: '2', md: '4' }} spacing={4}>
         <Heading>Projects</Heading>
         <Text>
