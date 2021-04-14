@@ -3,7 +3,6 @@ import { getReadingList } from '@/lib/api';
 import {
   Heading,
   List,
-  ListItem,
   Text,
   Box,
   Stack,
@@ -25,6 +24,7 @@ export default function Reading(props) {
               direction='column'
               outlineColor='red.300'
               key={item.title}
+              as='li'
             >
               <Link
                 href={item.source}
@@ -46,7 +46,7 @@ export default function Reading(props) {
                     {item.type}
                   </Box>
                 </Flex>
-                <Text>{item.description}</Text>
+                <Text maxWidth='80%'>{item.description}</Text>
               </Link>
             </Flex>
           );

@@ -18,6 +18,8 @@ import {
   AiOutlineBook,
   AiOutlineFontSize,
   AiOutlineForm,
+  AiOutlineMacCommand,
+  AiOutlineRollback,
 } from 'react-icons/ai';
 const NavDrawer = ({ onClose, isOpen }) => {
   const BlurredDrawer = styled(DrawerContent)`
@@ -51,7 +53,7 @@ const NavDrawer = ({ onClose, isOpen }) => {
           >
             <Link href='/'>
               <Button
-                leftIcon={<AiOutlineHome />}
+                leftIcon={<AiOutlineRollback />}
                 iconSpacing={4}
                 fontSize='2xl'
                 p={8}

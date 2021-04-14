@@ -6,7 +6,7 @@ export default function BlogPage(props) {
 
   return (
     <Stack spacing={4}>
-      <Heading as='h1'>Articles</Heading>
+      <Heading as='h1'>Blogs and snippets</Heading>
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ipsam
         mollitia doloremque.

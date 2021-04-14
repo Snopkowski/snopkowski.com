@@ -5,6 +5,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Stack,
   Text,
+  Box,
   Link,
   chakra,
   Heading,
@@ -13,7 +14,6 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-import { AiOutlineLink } from 'react-icons/ai';
 import NextLink from 'next/link';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
@@ -61,42 +61,44 @@ export default function PostBody({ content }) {
         />
       ),
       sanityImage: (props) => (
-        <Image
-          src={urlFor(props.node.asset).url()}
-          alt={props.node.caption}
-          width={props.node.dimensions.width}
-          height={props.node.dimensions.height}
-        />
+        <Box py='1'>
+          <Image
+            src={urlFor(props.node.asset).url()}
+            alt={props.node.caption}
+            width={props.node.dimensions.width}
+            height={props.node.dimensions.height}
+          />
+        </Box>
       ),
       block(props) {
         switch (props.node.style) {
           case 'h1':
             return (
-              <Heading as='h1' pt='4' pb={1} fontSize='5xl'>
+              <Heading as='h1' pt='4' fontSize='5xl'>
                 {props.children}
               </Heading>
             );
           case 'h2':
             return (
-              <Heading as='h2' pt='4' pb={1} fontSize='4xl'>
+              <Heading as='h2' pt='4' nfontSize='4xl'>
                 {props.children}
               </Heading>
             );
           case 'h3':
             return (
-              <Heading as='h3' pt='4' pb={1} fontSize='3xl'>
+              <Heading as='h3' pt='4' fontSize='3xl'>
                 {props.children}
               </Heading>
             );
           case 'h4':
             return (
-              <Heading as='h4' pt='4' pb={1} fontSize='2xl'>
+              <Heading as='h4' pt='4' fontSize='2xl'>
                 {props.children}
               </Heading>
             );
           case 'h5':
             return (
-              <Heading as='h5' pt='4' pb={1} fontSize='xl'>
+              <Heading as='h5' pt='4' fontSize='xl'>
                 {props.children}
               </Heading>
             );
@@ -139,7 +141,7 @@ export default function PostBody({ content }) {
   return (
     <Stack
       as={Wrapper}
-      spacing={2}
+      spacing={1}
       blocks={content}
       serializers={serializers}
     />

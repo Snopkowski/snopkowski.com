@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import PostBody from '../../components/PostBody';
-import { Heading, Box, Stack } from '@chakra-ui/react';
+import { Heading, Text, Box, Stack } from '@chakra-ui/react';
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -24,16 +24,21 @@ export default function Post({ post, morePosts, preview }) {
             </Heading>
             <PostBody content={post.content} />
           </Stack>
-          <Stack as='aside'>
+          <Stack spacing={4} as='aside'>
             <Heading>More posts</Heading>
             {morePosts.map((morePost) => (
-              <NextLink passHref href={`/blog/${morePost.slug}`}>
-                {morePost.title}
+              <NextLink
+                key={morePost.title}
+                passHref
+                href={`/blog/${morePost.slug}`}
+              >
+                <Box px={2} as='a'>
+                  <Heading fontSize='3xl'>{morePost.title}</Heading>
+                  <Text>{morePost.excerpt}</Text>
+                </Box>
               </NextLink>
             ))}
           </Stack>
-
-          {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
         </>
       )}
     </>

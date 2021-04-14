@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.8",
@@ -24,5 +25,7 @@
     "react-icons": "^4.2.0",
     "react-twitter-embed": "^3.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "next-sitemap": "^1.6.25"
+  }
 }
