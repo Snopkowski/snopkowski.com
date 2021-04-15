@@ -16,7 +16,7 @@ import Image from 'next/image';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import NextLink from 'next/link';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/dracula';
+import theme from 'prism-react-renderer/themes/nightOwl';
 export default function PostBody({ content }) {
   const Wrapper = chakra(BlockContent);
 

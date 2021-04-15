@@ -14,7 +14,9 @@ export default function Reading(props) {
   const list = props.readingList;
   return (
     <Stack spacing={4}>
-      <Heading as='h1'>Reading list</Heading>
+      <Heading as='h1' size='2xl'>
+        Reading list
+      </Heading>
       <Text>Not limited to programming</Text>
       <List as='ul' py={8} spacing={6}>
         {list.map((item) => {

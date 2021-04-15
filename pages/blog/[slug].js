@@ -3,8 +3,16 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import PostBody from '../../components/PostBody';
-import { Heading, Text, Box, Stack } from '@chakra-ui/react';
-export default function Post({ post, morePosts, preview }) {
+import { Heading, Text, Box, Spacer, Flex, Stack } from '@chakra-ui/react';
+import PageViews from '@/components/PageViews';
+import { useEffect } from 'react';
+export default function Post({ post, morePosts }) {
+  const slug = post.slug;
+  useEffect(() => {
+    fetch(`/api/views/${slug}`, {
+      method: 'POST',
+    });
+  }, [slug]);
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -22,6 +30,11 @@ export default function Post({ post, morePosts, preview }) {
             <Heading as='h1' fontSize='5xl'>
               {post.title}
             </Heading>
+            <Flex>
+              <PageViews slug={slug} />
+              <Spacer />
+              <Text>{post.date}</Text>
+            </Flex>
             <PostBody content={post.content} />
           </Stack>
           <Stack spacing={4} as='aside'>
@@ -45,11 +58,10 @@ export default function Post({ post, morePosts, preview }) {
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const data = await getPostAndMorePosts(params.slug, preview);
+export async function getStaticProps({ params }) {
+  const data = await getPostAndMorePosts(params.slug);
   return {
     props: {
-      preview,
       post: data?.post || null,
       morePosts: data?.morePosts || null,
     },

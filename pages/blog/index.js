@@ -1,12 +1,17 @@
+import PageViews from '@/components/PageViews';
 import { getAllPostsForHome } from '@/lib/api';
-import { Heading, Stack, Text, Box } from '@chakra-ui/layout';
+import { Heading, Stack, Spacer, Text, Flex, Box } from '@chakra-ui/layout';
 import NextLink from 'next/link';
+import Post from './[slug]';
+
 export default function BlogPage(props) {
   const posts = props.data;
 
   return (
     <Stack spacing={4}>
-      <Heading as='h1'>Blogs and snippets</Heading>
+      <Heading as='h1' size='2xl'>
+        Blogs and snippets
+      </Heading>
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ipsam
         mollitia doloremque.
@@ -18,6 +23,11 @@ export default function BlogPage(props) {
               <Heading fontSize={{ base: 'lg', md: '3xl' }} key={post.title}>
                 {post.title}
               </Heading>
+              <Flex color=''>
+                <PageViews slug={post.slug} />
+                <Spacer />
+                <Text>{post.date}</Text>
+              </Flex>
               <Text>{post.excerpt}</Text>
             </Box>
           </NextLink>
