@@ -9,7 +9,6 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react';
 import { getAllPostsForHome } from '@/lib/api';
-import Image from 'next/image';
 
 export default function Index({ allPosts }) {
   return (

@@ -3,12 +3,14 @@ import { getAllPostsForHome } from '@/lib/api';
 import { Heading, Stack, Spacer, Text, Flex, Box } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 import Post from './[slug]';
+import SEO from '@/components/SEO';
 
 export default function BlogPage(props) {
   const posts = props.data;
 
   return (
     <Stack spacing={4}>
+      <SEO title='Blog' />
       <Heading as='h1' size='2xl'>
         Blogs and snippets
       </Heading>

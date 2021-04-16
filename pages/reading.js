@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import { getReadingList } from '@/lib/api';
 
 import {
@@ -14,6 +15,7 @@ export default function Reading(props) {
   const list = props.readingList;
   return (
     <Stack spacing={4}>
+      <SEO title='Reading list' />
       <Heading as='h1' size='2xl'>
         Reading list
       </Heading>
