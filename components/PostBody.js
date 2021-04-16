@@ -74,35 +74,51 @@ export default function PostBody({ content }) {
         switch (props.node.style) {
           case 'h1':
             return (
-              <Heading as='h1' pt='4' fontSize='5xl'>
+              <Heading as='h1' pt='4' fontSize={{ base: '4xl', md: '5xl' }}>
                 {props.children}
               </Heading>
             );
           case 'h2':
             return (
-              <Heading as='h2' pt='4' nfontSize='4xl'>
+              <Heading as='h2' pt='4' nfontSize={{ base: '3xl', md: '4xl' }}>
                 {props.children}
               </Heading>
             );
           case 'h3':
             return (
-              <Heading as='h3' pt='4' fontSize='3xl'>
+              <Heading as='h3' pt='4' fontSize={{ base: '2xl', md: '3xl' }}>
                 {props.children}
               </Heading>
             );
           case 'h4':
             return (
-              <Heading as='h4' pt='4' fontSize='2xl'>
+              <Heading as='h4' pt='2' fontSize={{ base: 'xl', md: '2xl' }}>
                 {props.children}
               </Heading>
             );
           case 'h5':
             return (
-              <Heading as='h5' pt='4' fontSize='xl'>
+              <Heading as='h5' pt='2' fontSize='xl'>
                 {props.children}
               </Heading>
             );
-
+          case 'h6':
+            return (
+              <Heading as='h6' pt='2' fontSize='xl'>
+                {props.children}
+              </Heading>
+            );
+          case 'blockquote':
+            return (
+              <Text
+                fontSize='xl'
+                pl={{ base: '2', md: '4' }}
+                fontWeight='light'
+                fontStyle='italic'
+              >
+                {props.children}
+              </Text>
+            );
           default:
             return <Text>{props.children}</Text>;
         }
@@ -141,7 +157,7 @@ export default function PostBody({ content }) {
   return (
     <Stack
       as={Wrapper}
-      spacing={1}
+      spacing={2}
       blocks={content}
       serializers={serializers}
     />

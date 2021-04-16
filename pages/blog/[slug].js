@@ -26,7 +26,7 @@ export default function Post({ post, morePosts }) {
         <>
           <SEO title={post.title} description={post.excerpt} type='article' />
           <Stack spacing={4}>
-            <Heading as='h1' fontSize='5xl'>
+            <Heading as='h1' fontSize='4xl'>
               {post.title}
             </Heading>
             <Flex>
@@ -34,9 +34,10 @@ export default function Post({ post, morePosts }) {
               <Spacer />
               <Text>{post.date}</Text>
             </Flex>
+            <Text>{post.excerpt}</Text>
             <PostBody content={post.content} />
           </Stack>
-          <Stack spacing={4} as='aside'>
+          <Stack pt={4} spacing={4} as='aside'>
             <Heading>More posts</Heading>
             {morePosts.map((morePost) => (
               <NextLink
