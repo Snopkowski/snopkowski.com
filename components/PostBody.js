@@ -80,7 +80,7 @@ export default function PostBody({ content }) {
             );
           case 'h2':
             return (
-              <Heading as='h2' pt='4' nfontSize={{ base: '3xl', md: '4xl' }}>
+              <Heading as='h2' pt='4' fontSize={{ base: '3xl', md: '4xl' }}>
                 {props.children}
               </Heading>
             );
