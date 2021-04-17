@@ -50,7 +50,9 @@ export default function Reading(props) {
                     {item.type}
                   </Box>
                 </Flex>
-                <Text maxWidth='80%'>{item.description}</Text>
+                <Text maxWidth={{ base: '90%', md: '80%' }}>
+                  {item.description}
+                </Text>
               </Link>
             </Flex>
           );

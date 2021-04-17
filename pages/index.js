@@ -33,8 +33,8 @@ export default function Index({ allPosts }) {
               Wifes' blog
             </Heading>
             <Text>
-              Blog made with Gatsby, Contentful as a CMS, instant search
-              provided by Algolia and Styled Components mixed up with
+              Blog made with Gatsby, Contentful as a Headless CMS, instant
+              search provided by Algolia and Styled Components mixed up with
               typography.js
             </Text>
           </Box>
@@ -46,7 +46,10 @@ export default function Index({ allPosts }) {
             <Heading as='h3' fontSize='2xl'>
               Jokes
             </Heading>
-            <Text>Dev to clone made with Next.js, Firebase and Chakra UI.</Text>
+            <Text>
+              Website made with Next.js, Firebase and Chakra Ui. Feel free to
+              submit your own.
+            </Text>
           </Box>
           <Box
             borderRadius='md'
@@ -56,7 +59,10 @@ export default function Index({ allPosts }) {
             <Heading as='h3' fontSize='2xl'>
               Small business website
             </Heading>
-            <Text>Website for a small business made with Next.js</Text>
+            <Text>
+              Website for a small business made with Next.js, Chakra Ui. Form
+              handled by Sendgrid. Hosted on Vercel.
+            </Text>
           </Box>
         </Stack>
         <Heading>Tech stack</Heading>

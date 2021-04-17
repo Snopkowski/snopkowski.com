@@ -30,7 +30,7 @@ export default function BlogPage(props) {
                 <Spacer />
                 <Text>{post.date}</Text>
               </Flex>
-              <Text>{post.excerpt}</Text>
+              <Text maxWidth={{ base: '90%', md: '80%' }}>{post.excerpt}</Text>
             </Box>
           </NextLink>
         ))}
