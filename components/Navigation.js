@@ -32,9 +32,7 @@ const Navigation = () => {
       bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
     >
       <Link passHref href='/'>
-        <Button aria-label='Homepage' variant='solid'>
-          WS
-        </Button>
+        <Button aria-label='Homepage'>WS</Button>
       </Link>
       <Box>
         <DarkModeSwitch />
