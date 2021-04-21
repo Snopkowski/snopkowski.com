@@ -23,17 +23,13 @@ export default function Reading(props) {
       <List as='ul' py={8} spacing={6}>
         {list.map((item) => {
           return (
-            <Flex
-              px={{ base: '2', md: '4' }}
-              direction='column'
-              outlineColor='red.300'
-              key={item.title}
-              as='li'
-            >
+            <Flex direction='column' key={item.title} as='li'>
               <Link
                 href={item.source}
                 _hover={{ textUnderline: 'none' }}
                 isExternal
+                borderRadius='md'
+                px={{ base: '2', md: '4' }}
               >
                 <Flex py={2}>
                   <Heading fontSize={{ base: 'lg', md: '3xl' }}>
