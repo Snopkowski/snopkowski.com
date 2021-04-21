@@ -29,6 +29,10 @@ const styles = {
     'h1,h2,h3,h4,h5,h6': {
       color: props.colorMode === 'dark' ? 'bgLight' : 'bgDark',
     },
+    '::selection': {
+      color: props.colorMode === 'dark' ? 'bgLight' : 'bgDark',
+      bg: 'red.300',
+    },
   }),
 };
 

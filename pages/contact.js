@@ -123,9 +123,6 @@ export default function Contact() {
               : 'Sending...'}
           </Button>
           {status.info.error && <Text>Error: {status.info.msg}</Text>}
-          {!status.info.error && status.info.msg && (
-            <Text>{status.info.msg}</Text>
-          )}
         </Stack>
       </form>
     </Stack>
