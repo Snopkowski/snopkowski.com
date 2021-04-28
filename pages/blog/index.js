@@ -1,5 +1,5 @@
 import PageViews from '@/components/PageViews';
-import { getAllPostsForHome } from '@/lib/api';
+import { getAllPostsForBlog } from '@/lib/api';
 import { Heading, Stack, Spacer, Text, Flex, Box } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 import SEO from '@/components/SEO';
@@ -54,7 +54,7 @@ export default function BlogPage(props) {
 }
 
 export async function getStaticProps() {
-  const data = await getAllPostsForHome();
+  const data = await getAllPostsForBlog();
   return {
     props: {
       data,

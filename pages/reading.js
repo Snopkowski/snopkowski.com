@@ -11,17 +11,20 @@ import {
   Link,
   Flex,
 } from '@chakra-ui/layout';
-export default function Reading(props) {
-  const list = props.readingList;
+export default function Reading({ readingList } = props) {
   return (
     <Stack spacing={4}>
       <SEO title='Reading list' />
       <Heading as='h1' size='2xl'>
         Reading list
       </Heading>
-      <Text>Not limited to programming</Text>
+      <Text>
+        Not limited to programming or even reading. The list currently consists
+        of {readingList.length} things that made me think -&nbsp;
+        <i>"this is awesome stuff!"</i>.
+      </Text>
       <List as='ul' py={8} spacing={6}>
-        {list.map((item) => {
+        {readingList.map((item) => {
           return (
             <Flex direction='column' key={item.title} as='li'>
               <Link

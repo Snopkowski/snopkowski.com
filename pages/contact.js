@@ -76,9 +76,12 @@ export default function Contact() {
         Contact
       </Heading>
       <Text>
-        I always love to hear about opportunities. If you have any queries,
-        don't hesitate to contact me here, shoot a Twitter DM or send an&nbsp;
-        <Link href='mailto:hello@snopkowski.com'>email</Link>
+        I always love to hear about opportunities. If you have any queries, go
+        ahead and shoot a{' '}
+        <Link href='https://twitter.com/w_snopkowski'>Twitter DM</Link>, send
+        an&nbsp;
+        <Link href='mailto:hello@snopkowski.com'>email</Link> or contact me
+        here.
       </Text>
 
       <form onSubmit={handleOnSubmit}>
