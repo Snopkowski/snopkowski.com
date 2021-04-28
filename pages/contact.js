@@ -6,6 +6,7 @@ import {
   FormLabel,
   Textarea,
   Text,
+  Link,
   Button,
 } from '@chakra-ui/react';
 import SEO from '@/components/SEO';
@@ -74,10 +75,14 @@ export default function Contact() {
         <SEO title='Contact' />
         Contact
       </Heading>
-      <Text>Shoot a message here</Text>
+      <Text>
+        I always love to hear about opportunities. If you have any queries,
+        don't hesitate to contact me here, shoot a Twitter DM or send an&nbsp;
+        <Link href='mailto:hello@snopkowski.com'>email</Link>
+      </Text>
 
       <form onSubmit={handleOnSubmit}>
-        <Stack py={2} spacing={2}>
+        <Stack px={{ base: '2', md: '4' }} py={2} spacing={2}>
           <FormControl id='name' isRequired>
             <FormLabel>Name</FormLabel>
             <Input
@@ -119,7 +124,7 @@ export default function Contact() {
             {!status.submitting
               ? !status.submitted
                 ? 'Send'
-                : "It's done!"
+                : "It's done! 🥳"
               : 'Sending...'}
           </Button>
           {status.info.error && <Text>Error: {status.info.msg}</Text>}

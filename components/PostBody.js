@@ -112,7 +112,7 @@ export default function PostBody({ content }) {
             return (
               <Text
                 fontSize='xl'
-                pl={{ base: '2', md: '4' }}
+                p={{ base: '2', md: '4' }}
                 fontWeight='light'
                 fontStyle='italic'
               >

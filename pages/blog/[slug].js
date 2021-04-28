@@ -8,6 +8,7 @@ import PageViews from '@/components/PageViews';
 import { useEffect } from 'react';
 import SEO from '@/components/SEO';
 export default function Post({ post, morePosts }) {
+  console.log(post.date);
   const slug = post.slug;
   useEffect(() => {
     fetch(`/api/views/${slug}`, {
@@ -40,16 +41,26 @@ export default function Post({ post, morePosts }) {
           <Stack pt={4} spacing={4} as='aside'>
             <Heading>More posts</Heading>
             {morePosts.map((morePost) => (
-              <NextLink
+              <Box
+                as={NextLink}
                 key={morePost.title}
                 passHref
                 href={`/blog/${morePost.slug}`}
               >
-                <Box px={2} as='a'>
+                <Box
+                  border='2px solid transparent'
+                  _focus={{
+                    outline: 'none',
+                    border: '2px solid #FC8181',
+                    borderRadius: 'md',
+                  }}
+                  px={2}
+                  as='a'
+                >
                   <Heading fontSize='3xl'>{morePost.title}</Heading>
                   <Text>{morePost.excerpt}</Text>
                 </Box>
-              </NextLink>
+              </Box>
             ))}
           </Stack>
         </>
