@@ -11,6 +11,7 @@ import {
   Heading,
   useColorModeValue,
   Spinner,
+  Code,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
@@ -126,6 +127,7 @@ export default function PostBody({ content }) {
     },
 
     marks: {
+      code: (mark) => <Code children={mark.children} />,
       link: ({ mark, children }) => {
         const { blank, href, own } = mark;
         if (blank) {

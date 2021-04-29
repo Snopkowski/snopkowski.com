@@ -1,13 +1,12 @@
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import NextLink from 'next/link';
 import PostBody from '../../components/PostBody';
 import { Heading, Text, Box, Spacer, Flex, Stack } from '@chakra-ui/react';
 import PageViews from '@/components/PageViews';
 import { useEffect } from 'react';
 import SEO from '@/components/SEO';
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts }) {
   const slug = post.slug;
   useEffect(() => {
     fetch(`/api/views/${slug}`, {
