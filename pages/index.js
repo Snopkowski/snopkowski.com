@@ -41,6 +41,7 @@ export default function Index({ projects } = props) {
               borderRadius='md'
               border='1px solid gray'
               p={{ base: '2', md: '4' }}
+              key={project.title}
             >
               <Heading as='h3' fontSize='2xl'>
                 {project.title}

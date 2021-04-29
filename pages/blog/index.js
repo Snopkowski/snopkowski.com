@@ -42,7 +42,7 @@ export default function BlogPage(props) {
               <Flex py='1' fontSize='sm'>
                 <PageViews slug={post.slug} />
                 <Spacer />
-                <Text>{post.date}</Text>
+                <Text>{new Date(post.date).toDateString()}</Text>
               </Flex>
               <Text maxWidth={{ base: '90%', md: '80%' }}>{post.excerpt}</Text>
             </Box>

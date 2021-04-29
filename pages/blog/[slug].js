@@ -7,8 +7,7 @@ import { Heading, Text, Box, Spacer, Flex, Stack } from '@chakra-ui/react';
 import PageViews from '@/components/PageViews';
 import { useEffect } from 'react';
 import SEO from '@/components/SEO';
-export default function Post({ post, morePosts }) {
-  console.log(post.date);
+export default function Post({ post, morePosts, preview }) {
   const slug = post.slug;
   useEffect(() => {
     fetch(`/api/views/${slug}`, {
@@ -69,10 +68,11 @@ export default function Post({ post, morePosts }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  const data = await getPostAndMorePosts(params.slug);
+export async function getStaticProps({ params, preview = false }) {
+  const data = await getPostAndMorePosts(params.slug, preview);
   return {
     props: {
+      preview,
       post: data?.post || null,
       morePosts: data?.morePosts || null,
     },
