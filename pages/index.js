@@ -5,10 +5,19 @@ import {
   Stack,
   ListIcon,
   List,
+  Flex,
+  Spacer,
   ListItem,
+  IconButton,
+  Link,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
-import { AiOutlineCheckCircle } from 'react-icons/ai';
+import {
+  AiOutlineCheckCircle,
+  AiOutlineGithub,
+  AiOutlineLink,
+} from 'react-icons/ai';
 import { getProjects } from '@/lib/api';
 export default function Index({ projects } = props) {
   const technologies = [
@@ -39,13 +48,35 @@ export default function Index({ projects } = props) {
           {projects.map((project) => (
             <Box
               borderRadius='md'
-              border='1px solid gray'
-              p={{ base: '2', md: '4' }}
+              border='1px solid'
+              borderColor={useColorModeValue('gray.200', 'whiteAlpha.300')}
+              p={4}
               key={project.title}
             >
-              <Heading as='h3' fontSize='2xl'>
-                {project.title}
-              </Heading>
+              <Flex pb={2}>
+                <Heading as='h3' fontSize='2xl'>
+                  {project.title}
+                </Heading>
+                <Spacer />
+                {project.github && (
+                  <IconButton
+                    as={Link}
+                    href={project.github}
+                    variant='outline'
+                    aria-label='visit github'
+                    icon={<AiOutlineGithub />}
+                  />
+                )}
+                {project.demo && (
+                  <IconButton
+                    as={Link}
+                    href={project.demo}
+                    variant='outline'
+                    aria-label='visit demo'
+                    icon={<AiOutlineLink />}
+                  />
+                )}
+              </Flex>
               <Text>{project.description}</Text>
             </Box>
           ))}

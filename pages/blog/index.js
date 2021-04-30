@@ -14,7 +14,8 @@ export default function BlogPage(props) {
         Blogs and snippets
       </Heading>
       <Text>
-        Set of articles written by myself. Mostly development related.
+        Set of {posts.length} articles written by myself. Mostly development
+        related.
       </Text>
       <Stack py={8} spacing={6}>
         {posts.map((post) => (
@@ -39,10 +40,10 @@ export default function BlogPage(props) {
               <Heading fontSize={{ base: 'lg', md: '3xl' }} key={post.title}>
                 {post.title}
               </Heading>
-              <Flex py='1' fontSize='sm'>
-                <PageViews slug={post.slug} />
-                <Spacer />
+              <Flex py='2' fontSize='sm'>
                 <Text>{new Date(post.date).toDateString()}</Text>
+                <Spacer />
+                <PageViews slug={post.slug} />
               </Flex>
               <Text maxWidth={{ base: '90%', md: '80%' }}>{post.excerpt}</Text>
             </Box>

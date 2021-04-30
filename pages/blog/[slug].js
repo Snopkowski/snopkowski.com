@@ -6,8 +6,8 @@ import { Heading, Text, Box, Spacer, Flex, Stack } from '@chakra-ui/react';
 import PageViews from '@/components/PageViews';
 import { useEffect } from 'react';
 import SEO from '@/components/SEO';
-export default function Post({ post, morePosts }) {
-  const slug = post.slug;
+import ErrorPage from 'next/error';
+export default function Post({ post, morePosts, slug }) {
   useEffect(() => {
     fetch(`/api/views/${slug}`, {
       method: 'POST',
@@ -31,7 +31,7 @@ export default function Post({ post, morePosts }) {
             <Flex>
               <PageViews slug={slug} />
               <Spacer />
-              <Text>{post.date}</Text>
+              <Text>{new Date(post.date).toDateString()}</Text>
             </Flex>
             <Text>{post.excerpt}</Text>
             <PostBody content={post.content} />
@@ -72,6 +72,7 @@ export async function getStaticProps({ params, preview = false }) {
   return {
     props: {
       preview,
+      slug: data?.post.slug || null,
       post: data?.post || null,
       morePosts: data?.morePosts || null,
     },

@@ -21,7 +21,7 @@ export default function Reading({ readingList } = props) {
       <Text>
         Not limited to programming or even reading. The list currently consists
         of {readingList.length} things that made me think -&nbsp;
-        <i>"this is awesome stuff!"</i>.
+        <i>"this is amazing stuff!"</i>.
       </Text>
       <List as='ul' py={8} spacing={6}>
         {readingList.map((item) => {
