@@ -69,6 +69,7 @@ export default function Index({ projects } = props) {
                 )}
                 {project.demo && (
                   <IconButton
+                    ml={2}
                     as={Link}
                     href={project.demo}
                     variant='outline'
