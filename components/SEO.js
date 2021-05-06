@@ -7,7 +7,7 @@ export default function SEO({ title, description, image, type }) {
   const defaults = {
     title: 'Wojciech Snopkowski - Developer',
     description: `Front-end developer, JavaScript enthusiast, JamStack proponent.`,
-    image: 'https://snopkowski.com/static/images/share.png',
+    image: 'https://snopkowski.com/images/share.png',
     type: 'website',
   };
 
