@@ -12,6 +12,7 @@ export default function Social() {
         as={Link}
         rounded='md'
         isExternal
+        aria-label='github'
         href='https://github.com/Snopkowski'
         icon={<AiOutlineGithub />}
       />
@@ -20,6 +21,7 @@ export default function Social() {
         as={Link}
         rounded='md'
         isExternal
+        aria-label='twitter'
         href='https://twitter.com/w_snopkowski'
         icon={<AiOutlineTwitter />}
       />
@@ -28,6 +30,7 @@ export default function Social() {
         as={Link}
         rounded='md'
         isExternal
+        aria-label='linkedin'
         href='https://www.linkedin.com/in/wojciechsnopkowski'
         icon={<AiOutlineLinkedin />}
       />
@@ -36,6 +39,7 @@ export default function Social() {
         rounded='md'
         href='mailto:hello@snopkowski.com'
         as={Link}
+        aria-label='email'
         icon={<AiOutlineForm />}
       />
     </HStack>

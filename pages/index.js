@@ -61,9 +61,10 @@ export default function Index({ projects } = props) {
                 {project.github && (
                   <IconButton
                     as={Link}
+                    isExternal
                     href={project.github}
                     variant='outline'
-                    aria-label='visit github'
+                    aria-label='github'
                     icon={<AiOutlineGithub />}
                   />
                 )}
@@ -71,9 +72,10 @@ export default function Index({ projects } = props) {
                   <IconButton
                     ml={2}
                     as={Link}
+                    isExternal
                     href={project.demo}
                     variant='outline'
-                    aria-label='visit demo'
+                    aria-label='demo'
                     icon={<AiOutlineLink />}
                   />
                 )}
