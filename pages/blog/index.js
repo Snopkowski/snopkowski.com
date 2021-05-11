@@ -23,7 +23,7 @@ export default function BlogPage(props) {
             as={NextLink}
             key={post.slug}
             passHref
-            href={`blog/${post.slug}`}
+            href={`/blog/${post.slug}`}
             direction='column'
           >
             <Box

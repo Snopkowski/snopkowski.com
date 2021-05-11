@@ -11,7 +11,6 @@ export default async (req, res) => {
   }
 
   if (req.method === 'GET') {
-    // Query the pages table in the database where slug equals the request params slug.
     const { data } = await SupabaseAdmin.from('pages')
       .select('view_count')
       .filter('slug', 'eq', req.query.slug);

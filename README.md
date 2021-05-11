@@ -19,6 +19,10 @@ $ yarn dev
 
 Create a `.env.local` file similar to [`.env.example`](https://github.com/Snopkowski/snopkowski.com/blob/master/.env.example).
 
+## Sanity Studio
+
+Swap your schemas folder with [`this one`](https://github.com/Snopkowski/snopkowski.com/blob/master/schemas).
+
 ## Built Using
 
 - [Next.js](https://nextjs.org/)
