@@ -20,7 +20,6 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/nightOwl';
 export default function PostBody({ content }) {
   const Wrapper = chakra(BlockContent);
-
   const serializers = {
     types: {
       code: (props) => (
@@ -64,13 +63,26 @@ export default function PostBody({ content }) {
       sanityImage: (props) => (
         <Box py='1'>
           <Image
-            src={urlFor(props.node.asset).url()}
+            unoptimized
+            src={urlFor(props.node.asset).auto('format').fit('scale').url()}
             alt={props.node.caption}
             width={props.node.dimensions.width}
             height={props.node.dimensions.height}
           />
         </Box>
       ),
+
+      // sanityImage: (props) => (
+      //   <Box py='1'>
+      //     <Image
+      //       src={urlFor(props.node.asset).url()}
+      //       alt={props.node.caption}
+      //       width={props.node.dimensions.width}
+      //       height={props.node.dimensions.height}
+      //     />
+      //   </Box>
+      // ),
+
       block(props) {
         switch (props.node.style) {
           case 'h1':
