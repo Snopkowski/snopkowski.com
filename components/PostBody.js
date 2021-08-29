@@ -17,7 +17,7 @@ import Image from 'next/image';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import NextLink from 'next/link';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/nightOwl';
+import theme from 'prism-react-renderer/themes/vsDark';
 export default function PostBody({ content }) {
   const Wrapper = chakra(BlockContent);
   const serializers = {
@@ -32,7 +32,12 @@ export default function PostBody({ content }) {
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre
               className={className}
-              style={{ ...style, padding: '16px', overflowX: 'scroll' }}
+              style={{
+                ...style,
+                padding: '14px',
+                overflowX: 'scroll',
+                fontSize: '14px',
+              }}
             >
               {tokens.map((line, index) => {
                 const lineProps = getLineProps({ line, key: index });
@@ -63,7 +68,6 @@ export default function PostBody({ content }) {
       sanityImage: (props) => (
         <Box py='1'>
           <Image
-            unoptimized
             src={urlFor(props.node.asset).auto('format').fit('scale').url()}
             alt={props.node.caption}
             width={props.node.dimensions.width}
@@ -71,17 +75,6 @@ export default function PostBody({ content }) {
           />
         </Box>
       ),
-
-      // sanityImage: (props) => (
-      //   <Box py='1'>
-      //     <Image
-      //       src={urlFor(props.node.asset).url()}
-      //       alt={props.node.caption}
-      //       width={props.node.dimensions.width}
-      //       height={props.node.dimensions.height}
-      //     />
-      //   </Box>
-      // ),
 
       block(props) {
         switch (props.node.style) {
