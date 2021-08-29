@@ -9,7 +9,6 @@ const colors = {
   textLightBg: '#545455',
 };
 const config = {
-  initialColorMode: 'light',
   useSystemColorMode: true,
 };
 
