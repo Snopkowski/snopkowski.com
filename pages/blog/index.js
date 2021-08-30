@@ -9,7 +9,10 @@ export default function BlogPage(props) {
 
   return (
     <Stack spacing={4}>
-      <SEO title='Blog' />
+      <SEO
+        title='Blog'
+        description='Set of articles revolving around web development.'
+      />
       <Heading as='h1' size='2xl'>
         Blogs and snippets
       </Heading>

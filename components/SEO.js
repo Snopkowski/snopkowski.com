@@ -12,7 +12,7 @@ export default function SEO({ title, description, image, type }) {
   };
 
   const meta = {
-    title: title ? `${title} - Wojciech Sopkowski` : defaults.title,
+    title: title ? `${title} - Wojciech Snopkowski` : defaults.title,
     description: description ? description : defaults.description,
     image: image ? image : defaults.image,
     type: type ? type : defaults.type,
