@@ -14,11 +14,9 @@ import Social from 'components/Social';
 
 import styled from '@emotion/styled';
 import {
-  AiOutlineHome,
   AiOutlineBook,
   AiOutlineFontSize,
   AiOutlineForm,
-  AiOutlineMacCommand,
   AiOutlineRollback,
 } from 'react-icons/ai';
 const NavDrawer = ({ onClose, isOpen }) => {
