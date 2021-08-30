@@ -18,7 +18,7 @@ import {
   AiOutlineGithub,
   AiOutlineLink,
 } from 'react-icons/ai';
-import { getProjects } from '@/lib/api';
+import { getProjects } from 'lib/api';
 export default function Index({ projects } = props) {
   const technologies = [
     'JavaScript',

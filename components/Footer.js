@@ -1,5 +1,5 @@
 import { Divider, Stack, Text, Spacer, Link } from '@chakra-ui/react';
-import Social from './Social';
+import Social from 'components/Social';
 
 function Footer() {
   return (

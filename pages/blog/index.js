@@ -1,8 +1,8 @@
-import PageViews from '@/components/PageViews';
-import { getAllPostsForBlog } from '@/lib/api';
+import PageViews from 'components/PageViews';
+import { getAllPostsForBlog } from 'lib/api';
 import { Heading, Stack, Spacer, Text, Flex, Box } from '@chakra-ui/layout';
 import NextLink from 'next/link';
-import SEO from '@/components/SEO';
+import SEO from 'components/SEO';
 
 export default function BlogPage(props) {
   const posts = props.data;

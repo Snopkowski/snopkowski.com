@@ -1,11 +1,11 @@
-import { getAllPostsWithSlug, getPostAndMorePosts } from '@/lib/api';
+import { getAllPostsWithSlug, getPostAndMorePosts } from 'lib/api';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
-import PostBody from '@/components/PostBody';
+import PostBody from 'components/PostBody';
 import { Heading, Text, Box, Spacer, Flex, Stack } from '@chakra-ui/react';
-import PageViews from '@/components/PageViews';
+import PageViews from 'components/PageViews';
 import { useEffect } from 'react';
-import SEO from '@/components/SEO';
+import SEO from 'components/SEO';
 import ErrorPage from 'next/error';
 export default function Post({ post, morePosts, slug }) {
   useEffect(() => {
@@ -23,7 +23,12 @@ export default function Post({ post, morePosts, slug }) {
         <h1>Loading…</h1>
       ) : (
         <>
-          <SEO title={post.title} description={post.excerpt} type='article' />
+          <SEO
+            title={post.title}
+            description={post.excerpt}
+            image={post.coverImage}
+            type='article'
+          />
           <Stack spacing={4}>
             <Heading as='h1' fontSize='4xl'>
               {post.title}

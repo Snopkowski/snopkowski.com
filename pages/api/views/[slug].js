@@ -1,4 +1,4 @@
-import { SupabaseAdmin } from '@/lib/supabase-admin';
+import { SupabaseAdmin } from 'lib/supabase-admin';
 
 export default async (req, res) => {
   if (req.method === 'POST') {

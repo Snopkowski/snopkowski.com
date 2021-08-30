@@ -8,9 +8,9 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { TriangleDownIcon } from '@chakra-ui/icons';
-import NavDrawer from './NavDrawer';
+import NavDrawer from 'components/NavDrawer';
 import styled from '@emotion/styled';
-import DarkModeSwitch from './DarkModeSwitch';
+import DarkModeSwitch from 'components/DarkModeSwitch';
 const Navigation = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 

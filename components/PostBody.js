@@ -1,6 +1,6 @@
 // import markdownStyles from './markdown-styles.module.css';
 import BlockContent from '@sanity/block-content-to-react';
-import { urlFor } from '../lib/sanity';
+import { urlFor } from 'lib/sanity';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Stack,

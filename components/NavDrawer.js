@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { TriangleUpIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
-import Social from './Social';
+import Social from 'components/Social';
 
 import styled from '@emotion/styled';
 import {

@@ -1,7 +1,7 @@
 import { Flex, Spacer, Stack, Divider } from '@chakra-ui/react';
-import Footer from '@/components/Footer';
-import Navigation from '@/components/Navigation';
-import SEO from '@/components/SEO';
+import Footer from 'components/Footer';
+import Navigation from 'components/Navigation';
+import SEO from 'components/SEO';
 
 const Layout = ({ children }) => {
   return (

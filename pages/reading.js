@@ -1,5 +1,5 @@
-import SEO from '@/components/SEO';
-import { getReadingList } from '@/lib/api';
+import SEO from 'components/SEO';
+import { getReadingList } from 'lib/api';
 
 import {
   Heading,

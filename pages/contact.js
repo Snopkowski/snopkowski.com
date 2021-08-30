@@ -9,7 +9,7 @@ import {
   Link,
   Button,
 } from '@chakra-ui/react';
-import SEO from '@/components/SEO';
+import SEO from 'components/SEO';
 import { useState } from 'react';
 export default function Contact() {
   const [status, setStatus] = useState({
