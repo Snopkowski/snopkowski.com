@@ -30,7 +30,7 @@ export default function Post({ post, morePosts, slug }) {
             type='article'
           />
           <Stack spacing={4}>
-            <Heading as='h1' fontSize='4xl'>
+            <Heading as='h1' fontSize='5xl'>
               {post.title}
             </Heading>
             <Flex>
