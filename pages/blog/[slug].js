@@ -41,7 +41,7 @@ export default function Post({ post, morePosts, slug }) {
             <Text>{post.excerpt}</Text>
             <PostBody content={post.content} />
           </Stack>
-          <Stack pt={4} spacing={4} as='aside'>
+          <Stack pt={8} spacing={4} as='aside'>
             <Heading>More posts</Heading>
             {morePosts.map((morePost) => (
               <Box
@@ -81,6 +81,7 @@ export async function getStaticProps({ params, preview = false }) {
       post: data?.post || null,
       morePosts: data?.morePosts || null,
     },
+    revalidate: 60,
   };
 }
 
