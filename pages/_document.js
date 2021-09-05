@@ -82,6 +82,12 @@ export default class Document extends NextDocument {
             content='/favicons/ms-icon-144x144.png'
           />
           <meta name='theme-color' content='#ffffff' />
+          <script
+            async
+            defer
+            data-website-id='c4efb065-08c8-4a6b-9a0d-808e64d55c31'
+            src='https://analytics.snopkowski.com/umami.js'
+          ></script>
         </Head>
         <body>
           <ColorModeScript
