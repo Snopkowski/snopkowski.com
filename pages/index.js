@@ -39,8 +39,7 @@ export default function Index({ projects } = props) {
       </Heading>
       <Text pb={2}>
         I'm a Birmingham-based web developer, and I enjoy creating performant
-        things that live on the Internet. Currently open for an impactful role
-        in the industry.
+        things that live on the Internet.
       </Text>
       <Stack px={{ base: '2', md: '4' }} spacing={4}>
         <Heading>Projects</Heading>
