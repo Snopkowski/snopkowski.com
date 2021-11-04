@@ -39,7 +39,8 @@ export default function Index({ projects } = props) {
       </Heading>
       <Text pb={2}>
         I'm a Birmingham-based web developer, and I enjoy creating performant
-        things that live on the Internet.
+        things that live on the Internet. Currently working as a React Developer
+        at Clearabee where I get to use TypeScript, React and Next.js every day.
       </Text>
       <Stack px={{ base: '2', md: '4' }} spacing={4}>
         <Heading>Projects</Heading>
