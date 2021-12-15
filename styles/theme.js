@@ -3,13 +3,14 @@ import { extendTheme } from '@chakra-ui/react';
 const colors = {
   bgDark: '#0b0c0d',
   bgLight: '#F7FAFC',
-  bgDarkOpacity: 'rgba(11, 12, 13, 0.8)',
-  bgLightOpacity: 'rgba(248, 250, 252, 0.8)',
+  bgDarkOpacity: 'rgba(11, 12, 13, 0.75)',
+  bgLightOpacity: 'rgba(248, 250, 252, 0.75)',
   textDarkBg: '#acafb0',
   textLightBg: '#545455',
 };
 const config = {
-  useSystemColorMode: true,
+  initialColorMode: 'light',
+  useSystemColorMode: false,
 };
 
 const shadows = {

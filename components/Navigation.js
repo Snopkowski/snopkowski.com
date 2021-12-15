@@ -9,24 +9,21 @@ import {
 import Link from 'next/link';
 import { TriangleDownIcon } from '@chakra-ui/icons';
 import NavDrawer from 'components/NavDrawer';
-import styled from '@emotion/styled';
 import DarkModeSwitch from 'components/DarkModeSwitch';
 const Navigation = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const Nav = styled(Flex)`
-    backdrop-filter: blur(10px);
-    z-index: 10;
-  `;
-
   return (
-    <Nav
+    <Flex
       py={5}
       as='nav'
       direction='row'
       w='100%'
+      zIndex='10'
       pos='sticky'
       top='0'
+      backdropFilter='auto'
+      backdropBlur='12px'
       px={{ base: '4', md: '12' }}
       justifyContent='space-between'
       bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
@@ -44,7 +41,7 @@ const Navigation = () => {
         />
       </Box>
       <NavDrawer onClose={onClose} isOpen={isOpen} />
-    </Nav>
+    </Flex>
   );
 };
 

@@ -23,6 +23,7 @@ export default function Index({ projects } = props) {
   const technologies = [
     'JavaScript',
     'React',
+    'React Native',
     'Next.js',
     'Gatsby',
     'Sass',
@@ -40,7 +41,8 @@ export default function Index({ projects } = props) {
       <Text pb={2}>
         I'm a Birmingham-based web developer, and I enjoy creating performant
         things that live on the Internet. Currently working as a React Developer
-        at Clearabee where I get to use TypeScript, React and Next.js every day.
+        at Clearabee where I get to use TypeScript, React, React Native and
+        Next.js every day.
       </Text>
       <Stack px={{ base: '2', md: '4' }} spacing={4}>
         <Heading>Projects</Heading>
