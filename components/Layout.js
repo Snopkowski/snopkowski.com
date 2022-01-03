@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
           as='main'
           overflow='hidden'
           py={10}
-          px={{ base: '6', md: '16' }}
+          px={{ base: '4', md: '16' }}
         >
           {children}
         </Stack>

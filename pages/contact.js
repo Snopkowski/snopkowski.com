@@ -85,7 +85,7 @@ export default function Contact() {
       </Text>
 
       <form onSubmit={handleOnSubmit}>
-        <Stack px={{ base: '2', md: '4' }} py={2} spacing={2}>
+        <Stack px={{ base: '2', md: '3' }} py={2} spacing={2}>
           <FormControl id='name' isRequired>
             <FormLabel>Name</FormLabel>
             <Input

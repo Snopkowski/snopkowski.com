@@ -44,13 +44,13 @@ export default function Index({ projects } = props) {
         at Clearabee where I get to use TypeScript, React, React Native and
         Next.js every day.
       </Text>
-      <Stack px={{ base: '2', md: '4' }} spacing={4}>
+      <Stack px={{ base: '2', md: '3' }} spacing={4}>
         <Heading>Projects</Heading>
         <Stack spacing={4}>
           {projects.map((project) => (
             <Box
               borderRadius='md'
-              border='1px solid'
+              border='2px solid'
               borderColor={useColorModeValue('gray.200', 'whiteAlpha.300')}
               p={4}
               key={project.title}

@@ -30,7 +30,7 @@ export default function BlogPage(props) {
             direction='column'
           >
             <Box
-              px={{ base: '2', md: '4' }}
+              px={{ base: '2', md: '3' }}
               as='a'
               py='2'
               border='2px solid transparent'

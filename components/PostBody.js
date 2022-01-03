@@ -1,4 +1,3 @@
-// import markdownStyles from './markdown-styles.module.css';
 import BlockContent from '@sanity/block-content-to-react';
 import { urlFor } from 'lib/sanity';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
@@ -12,6 +11,7 @@ import {
   useColorModeValue,
   Spinner,
   Code,
+  theme as chakraTheme,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
@@ -34,9 +34,10 @@ export default function PostBody({ content }) {
               className={className}
               style={{
                 ...style,
-                padding: '14px',
+                padding: chakraTheme.space[3],
                 overflowX: 'scroll',
-                fontSize: '14px',
+                fontSize: chakraTheme.fontSizes.sm,
+                borderRadius: chakraTheme.space[2],
               }}
             >
               {tokens.map((line, index) => {

@@ -1,11 +1,4 @@
-import {
-  useDisclosure,
-  Button,
-  Flex,
-  Box,
-  useColorModeValue,
-  IconButton,
-} from '@chakra-ui/react';
+import { useDisclosure, Button, Flex, Box, IconButton } from '@chakra-ui/react';
 import Link from 'next/link';
 import { TriangleDownIcon } from '@chakra-ui/icons';
 import NavDrawer from 'components/NavDrawer';

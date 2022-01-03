@@ -29,7 +29,7 @@ export default function Post({ post, morePosts, slug }) {
             image={post.coverImage}
             type='article'
           />
-          <Stack spacing={4}>
+          <Stack spacing={4} px={{ md: '3' }}>
             <Heading as='h1' fontSize='5xl'>
               {post.title}
             </Heading>

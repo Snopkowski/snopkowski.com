@@ -32,7 +32,7 @@ export default function Reading({ readingList } = props) {
                 _hover={{ textUnderline: 'none' }}
                 isExternal
                 borderRadius='md'
-                px={{ base: '2', md: '4' }}
+                px={{ base: '2', md: '3' }}
               >
                 <Flex py={2}>
                   <Heading fontSize={{ base: 'lg', md: '3xl' }}>
