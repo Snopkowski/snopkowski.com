@@ -15,18 +15,16 @@ const Navigation = () => {
 
   return (
     <Flex
-      py={5}
+      py={4}
       as='nav'
-      direction='row'
       w='100%'
       zIndex='10'
       pos='sticky'
       top='0'
       backdropFilter='auto'
-      backdropBlur='12px'
+      backdropBlur='16px'
       px={{ base: '4', md: '12' }}
       justifyContent='space-between'
-      bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
     >
       <Link passHref href='/'>
         <Button aria-label='Homepage'>WS</Button>

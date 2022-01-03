@@ -1,5 +1,6 @@
 import {
   Drawer,
+  Box,
   DrawerBody,
   DrawerFooter,
   DrawerOverlay,
@@ -7,42 +8,47 @@ import {
   useColorModeValue,
   IconButton,
   Button,
+  Flex,
 } from '@chakra-ui/react';
 import { TriangleUpIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import Social from 'components/Social';
 
-import styled from '@emotion/styled';
 import {
   AiOutlineBook,
   AiOutlineFontSize,
   AiOutlineForm,
   AiOutlineRollback,
 } from 'react-icons/ai';
-const NavDrawer = ({ onClose, isOpen }) => {
-  const BlurredDrawer = styled(DrawerContent)`
-    backdrop-filter: blur(10px);
-  `;
 
+const NavDrawer = ({ onClose, isOpen }) => {
   return (
     <Drawer isOpen={isOpen} placement='top' onClose={onClose} isFullHeight>
-      <DrawerOverlay bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}>
-        <BlurredDrawer
+      <DrawerOverlay bg={useColorModeValue('bgLight', 'bgDark')}>
+        <DrawerContent
           w='3xl'
-          bg={useColorModeValue('bgLightOpacity', 'bgDarkOpacity')}
+          bg={useColorModeValue('bgLight', 'bgDark')}
+          backdropFilter='auto'
+          backdropBlur='16px'
           m='0 auto'
           px={{ base: '4', md: '12' }}
-          py={7}
+          py={4}
           shadow='none'
         >
-          <IconButton
-            alignSelf='flex-end'
-            boxShadow='outlineShadow'
-            onClick={onClose}
-            icon={<TriangleUpIcon />}
-            aria-label='Close Navigation'
-          />
-
+          <Flex w='100%' justifyContent='space-between' py={2}>
+            <Link passHref href='/'>
+              <Button aria-label='Homepage' onClick={onClose}>
+                WS
+              </Button>
+            </Link>
+            <IconButton
+              alignSelf='flex-end'
+              boxShadow='outlineShadow'
+              onClick={onClose}
+              icon={<TriangleUpIcon />}
+              aria-label='Close Navigation'
+            />
+          </Flex>
           <DrawerBody
             display='flex'
             justifyContent='center'
@@ -98,14 +104,13 @@ const NavDrawer = ({ onClose, isOpen }) => {
               </Button>
             </Link>
           </DrawerBody>
-
           <DrawerFooter
             alignSelf={{ base: 'center', md: 'end' }}
             mb={['10vh', '0']}
           >
             <Social />
           </DrawerFooter>
-        </BlurredDrawer>
+        </DrawerContent>
       </DrawerOverlay>
     </Drawer>
   );
