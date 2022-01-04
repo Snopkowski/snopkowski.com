@@ -73,6 +73,8 @@ export default function PostBody({ content }) {
             alt={props.node.caption}
             width={props.node.dimensions.width}
             height={props.node.dimensions.height}
+            placeholder='blur'
+            blurDataURL={props.node.lqip}
           />
         </Box>
       ),
