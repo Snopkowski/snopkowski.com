@@ -1,74 +1,50 @@
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import {
-  Heading,
-  Stack,
-  Input,
-  FormControl,
+  FormErrorMessage,
   FormLabel,
-  Textarea,
+  FormControl,
+  Input,
+  Button,
+  Stack,
+  Heading,
   Text,
   Link,
-  Button,
+  Textarea,
 } from '@chakra-ui/react';
 import SEO from 'components/SEO';
-import { useState } from 'react';
-export default function Contact() {
-  const [status, setStatus] = useState({
-    submitted: false,
-    submitting: false,
-    info: { error: false, msg: null },
-  });
 
-  const [inputs, setInputs] = useState({
-    email: '',
-    message: '',
-    name: '',
-  });
+export default function HookForm() {
+  const [status, setStatus] = useState('Send');
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
-  const handleResponse = (status, msg) => {
+  const handleResponse = (status) => {
     if (status === 200) {
-      setStatus({
-        submitted: true,
-        submitting: false,
-        info: { error: false, msg: msg },
-      });
-      setInputs({
-        email: '',
-        message: '',
-        name: '',
-      });
+      reset();
+      setStatus("It's done! 🥳");
+      setTimeout(() => setStatus('Send'), 5000);
     } else {
-      setStatus({
-        info: { error: true, msg: msg },
-      });
+      setStatus('Oops, try again.');
+      setTimeout(() => setStatus('Send'), 5000);
     }
   };
 
-  const handleOnChange = (e) => {
-    e.persist();
-    setInputs((prev) => ({
-      ...prev,
-      [e.target.id]: e.target.value,
-    }));
-    setStatus({
-      submitted: false,
-      submitting: false,
-      info: { error: false, msg: null },
-    });
-  };
-
-  const handleOnSubmit = async (e) => {
-    e.preventDefault();
-    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+  const handleOnSubmit = async (values) => {
     const res = await fetch('/api/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(inputs),
+      body: JSON.stringify(values),
     });
-    const text = await res.text();
-    handleResponse(res.status, text);
+    handleResponse(res.status);
   };
+
   return (
     <Stack spacing={4}>
       <Heading as='h1' size='2xl'>
@@ -83,54 +59,70 @@ export default function Contact() {
         <Link href='mailto:hello@snopkowski.com'>email</Link> or contact me
         here.
       </Text>
-
-      <form onSubmit={handleOnSubmit}>
+      <form onSubmit={handleSubmit(handleOnSubmit)}>
         <Stack px={{ base: '2', md: '3' }} py={2} spacing={2}>
-          <FormControl id='name' isRequired>
-            <FormLabel>Name</FormLabel>
+          <FormControl isInvalid={errors.name}>
+            <FormLabel htmlFor='name'>Name</FormLabel>
             <Input
-              type='text'
-              onChange={handleOnChange}
-              value={inputs.name}
+              id='name'
+              {...register('name', {
+                required: 'Name is required',
+                minLength: { value: 3, message: 'Minimum length should be 3' },
+              })}
               _focus={{
                 borderColor: 'red.300',
               }}
             />
+            <FormErrorMessage>
+              {errors.name && errors.name.message}
+            </FormErrorMessage>
           </FormControl>
-          <FormControl id='email' isRequired>
-            <FormLabel>Email</FormLabel>
+          <FormControl isInvalid={errors.email}>
+            <FormLabel htmlFor='email'>Email</FormLabel>
             <Input
-              type='email'
-              onChange={handleOnChange}
-              value={inputs.email}
+              id='email'
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: 'Entered value does not match email format',
+                },
+              })}
               _focus={{
                 borderColor: 'red.300',
               }}
             />
+            <FormErrorMessage>
+              {errors.email && errors.email.message}
+            </FormErrorMessage>
           </FormControl>
-          <FormControl id='message' isRequired>
-            <FormLabel>Message</FormLabel>
+          <FormControl isInvalid={errors.message}>
+            <FormLabel htmlFor='message'>Message</FormLabel>
             <Textarea
-              onChange={handleOnChange}
-              value={inputs.message}
+              id='message'
+              {...register('message', {
+                required: 'Message is required',
+                minLength: {
+                  value: 5,
+                  message: 'Minimum length should be 5',
+                },
+              })}
               _focus={{
                 borderColor: 'red.300',
               }}
             />
+            <FormErrorMessage>
+              {errors.message && errors.message.message}
+            </FormErrorMessage>
           </FormControl>
           <Button
             w='xs'
             alignSelf='center'
+            disabled={isSubmitting}
             type='submit'
-            disabled={status.submitting}
           >
-            {!status.submitting
-              ? !status.submitted
-                ? 'Send'
-                : "It's done! 🥳"
-              : 'Sending...'}
+            {status}
           </Button>
-          {status.info.error && <Text>Error: {status.info.msg}</Text>}
         </Stack>
       </form>
     </Stack>
