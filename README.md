@@ -30,3 +30,4 @@ Swap your schemas folder with [`this one`](https://github.com/Snopkowski/snopkow
 - [Sanity](https://www.sanity.io/)
 - [Chakra UI](https://chakra-ui.com/)
 - [Sendgrid](https://sendgrid.com/)
+- [React Hook Form](https://react-hook-form.com/)
