@@ -85,8 +85,8 @@ export default class Document extends NextDocument {
           <script
             async
             defer
-            data-website-id='c4efb065-08c8-4a6b-9a0d-808e64d55c31'
-            src='https://analytics.snopkowski.com/umami.js'
+            data-website-id={process.env.ANALYTICS}
+            src={process.env.ANALYTICS_URL}
           ></script>
         </Head>
         <body>

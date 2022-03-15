@@ -31,3 +31,4 @@ Swap your schemas folder with [`this one`](https://github.com/Snopkowski/snopkow
 - [Chakra UI](https://chakra-ui.com/)
 - [Sendgrid](https://sendgrid.com/)
 - [React Hook Form](https://react-hook-form.com/)
+- [Umami](https://umami.is/)
